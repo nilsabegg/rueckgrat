@@ -1,0 +1,15 @@
+{
+    "require": {
+        "silex/silex": "master",
+        "doctrine/orm": "2.1.*",
+        "doctrine/dbal": "2.1.*",
+        "doctrine/common": "2.1.*",
+        "nutwerk/doctrine-orm-provider": "1.0.*",
+        "symfony/console": "2.1.*",
+        "symfony/yaml": "2.1.*",
+        "swiftmailer/swiftmailer": ">=4.1.7",
+        "grom/silex-service-provider": "dev-master",
+        "monolog/monolog": ">=1.0.0",
+        "ezyang/htmlpurifier": "dev-master"
+    }
+}

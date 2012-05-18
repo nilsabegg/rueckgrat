@@ -1,0 +1,8 @@
+.DS_Store
+.models_old/
+.models_old
+/.models_old/
+/.models_old/*
+*/.models_old/*
+/vendor/*
+/cache/*
