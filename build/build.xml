@@ -4,6 +4,8 @@
 
  <target name="prepstructure" description="Prepare the structure of the codebase">
   <delete dir="${basedir}/../doc"/>
+  <delete dir="${basedir}/var"/>
+  <delete file="${basedir}/../checkstyle.xml"/>
   <delete dir="${basedir}/logs"/>
   <delete dir="${basedir}/testresults"/>
   <mkdir dir="${basedir}/logs"/>
@@ -12,13 +14,13 @@
 
  <target name="phpcs" description="Generate checkstyle.xml using PHP_CodeSniffer">
   <exec executable="phpcs">
-   <arg line="--report=checkstyle --report-file=${basedir}/logs/checkstyle.xml --standard=PSR ${basedir}/../src/" />
+   <arg line="--report=checkstyle --report-file=logs/checkstyle.xml --standard=PSR ../src/" />
   </exec>
  </target>
 
  <target name="phpdoc" description="Generate API documentation">
  <exec executable="phpdoc">
-  <arg line="-d ${basedir}/../src -t ${basedir}/../doc --template responsive" />
+  <arg line="-d ../src -t ../doc --template responsive" />
  </exec>
 </target>
 
