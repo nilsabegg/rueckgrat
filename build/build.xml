@@ -26,9 +26,9 @@
 
  <target name="phpmd" description="Perform project mess detection using PHPMD and print human readable output. Intended for usage on the command line before committing.">
   <exec executable="phpmd">
-   <arg path="../src" />
+   <arg path="${basedir}/../src" />
    <arg value="text" />
-   <arg value="build/phpmd.xml" />
+   <arg value="${basedir}/build/phpmd.xml" />
   </exec>
  </target>
 
