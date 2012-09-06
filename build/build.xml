@@ -3,8 +3,6 @@
 <project name="Rueckgrat" default="build" basedir=".">
 
  <target name="prepstructure" description="Prepare the structure of the codebase">
-  <delete dir="${basedir}/doc"/>
-  <delete dir="${basedir}/build"/>
   <delete dir="${basedir}/../doc"/>
   <delete dir="${basedir}/logs"/>
   <delete dir="${basedir}/testresults"/>
@@ -15,13 +13,13 @@
 
  <target name="phpcs" description="Generate checkstyle.xml using PHP_CodeSniffer">
   <exec executable="phpcs">
-   <arg line="--report=checkstyle --report-file=${basedir}/build/logs/checkstyle.xml --standard=PSR ${basedir}/../src/" />
+   <arg line="--report=checkstyle --report-file=${basedir}/logs/checkstyle.xml --standard=PSR ${basedir}/../src/" />
   </exec>
  </target>
 
  <target name="phpdoc" description="Generate API documentation">
  <exec executable="phpdoc">
-  <arg line="-d ${basedir}/../src -t ${basedir}/../doc" />
+  <arg line="-d ${basedir}/../src -t ${basedir}/../doc --template responsive" />
  </exec>
 </target>
 
