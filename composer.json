@@ -1,0 +1,28 @@
+{
+    "name": "ffuf/rueckgrat",
+    "type": "framework",
+    "description": "A really bad MVC Framework.",
+    "keywords": ["mvc","framework"],
+    "homepage": "http://github.com/nilsabegg/rueckgrat",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nils Abegg",
+            "email": "rueckgrat@nilsabegg.de",
+            "homepage": "http://twitter/nilsabegg",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability" : "dev",
+    "require": {
+        "php": ">=5.3.0",
+        "pimple/pimple": "dev-master",
+        "ezyang/htmlpurifier": "dev-master",
+        "rych/phpass": "3.x-dev",
+    },
+    "autoload": {
+        "psr-0": {
+            "Rueckgrat": "src"
+        }
+    }
+}
