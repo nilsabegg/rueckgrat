@@ -22,7 +22,7 @@ class Bootloader
         $this->pimple = $pimple;
         $this->config = $pimple['config'];
         $this->setReporting();
-        $appLoader = new Autoloader($this->config['general.namespace'], __DIR__ . '/../../../../src');
+        $appLoader = new Autoloader($this->config['general.namespace'], __DIR__ . '/../../../../../src');
         $appLoader->register();
 
     }
