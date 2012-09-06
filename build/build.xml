@@ -24,6 +24,14 @@
  </exec>
 </target>
 
- <target name="build" depends="prepstructure,phpcs,phpdoc"/>
+ <target name="phpmd" description="Perform project mess detection using PHPMD and print human readable output. Intended for usage on the command line before committing.">
+  <exec executable="phpmd">
+   <arg path="../src" />
+   <arg value="text" />
+   <arg value="build/phpmd.xml" />
+  </exec>
+ </target>
+
+ <target name="build" depends="prepstructure,phpcs,phpdoc,phpmd"/>
 
 </project>
