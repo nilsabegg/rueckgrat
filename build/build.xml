@@ -4,11 +4,13 @@
 
  <target name="prepstructure" description="Prepare the structure of the codebase">
   <delete dir="${basedir}/doc"/>
-  <delete dir="${basedir}/build/logs"/>
-  <delete dir="${basedir}/build/testresults"/>
-  <mkdir dir="${basedir}/doc"/>
-  <mkdir dir="${basedir}/build/logs"/>
-  <mkdir dir="${basedir}/build/testresults"/>
+  <delete dir="${basedir}/build"/>
+  <delete dir="${basedir}/../doc"/>
+  <delete dir="${basedir}/logs"/>
+  <delete dir="${basedir}/testresults"/>
+  <mkdir dir="${basedir}/../doc"/>
+  <mkdir dir="${basedir}/logs"/>
+  <mkdir dir="${basedir}/testresults"/>
  </target>
 
  <target name="phpcs" description="Generate checkstyle.xml using PHP_CodeSniffer">
