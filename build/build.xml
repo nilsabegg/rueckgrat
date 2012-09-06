@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project name="Rueckgrat" default="build" basedir=".">
- <property name="source" value="trunk"/>
+ <property name="source" value="src"/>
 
  <target name="prepstructure" description="Prepare the structure of the codebase">
   <delete dir="${basedir}/build/docs"/>
@@ -19,5 +19,5 @@
  </target>
 
  <target name="build" depends="prepstructure,phpcs"/>
- 
+
 </project>
