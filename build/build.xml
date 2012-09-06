@@ -32,6 +32,16 @@
   </exec>
  </target>
 
- <target name="build" depends="prepstructure,phpcs,phpdoc,phpmd"/>
+ <target name="phpmd-ci" description="Perform project mess detection using PHPMD creating a log file for the continuous integration server">
+  <exec executable="phpmd">
+   <arg path="../src" />
+   <arg value="xml" />
+   <arg value="build/phpmd.xml" />
+   <arg value="--reportfile" />
+   <arg value="build/logs/pmd.xml" />
+  </exec>
+ </target>
+
+ <target name="build" depends="prepstructure,phpcs,phpdoc,phpmd,phpmd-ci"/>
 
 </project>
