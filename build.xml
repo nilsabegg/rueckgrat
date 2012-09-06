@@ -3,45 +3,51 @@
 <project name="Rueckgrat" default="build" basedir=".">
 
  <target name="prepstructure" description="Prepare the structure of the codebase">
-  <delete dir="${basedir}/../doc"/>
-  <delete dir="${basedir}/var"/>
-  <delete file="${basedir}/../checkstyle.xml"/>
-  <delete dir="${basedir}/logs"/>
-  <delete dir="${basedir}/testresults"/>
-  <mkdir dir="${basedir}/logs"/>
-  <mkdir dir="${basedir}/testresults"/>
+  <delete dir="${basedir}/doc"/>
+  <delete dir="${basedir}/build/logs"/>
+  <delete dir="${basedir}/build/testresults"/>
+  <mkdir dir="${basedir}/build/logs"/>
+  <mkdir dir="${basedir}/build/testresults"/>
+ </target>
+
+ <target name="phpcpd" description="Find duplicate code using PHPCPD">
+  <exec executable="phpcpd">
+   <arg value="--log-pmd" />
+   <arg value="${basedir}/build/logs/pmd-cpd.xml" />
+   <arg path="${basedir}/src" />
+  </exec>
  </target>
 
  <target name="phpcs" description="Generate checkstyle.xml using PHP_CodeSniffer">
   <exec executable="phpcs">
-   <arg line="--report=checkstyle --report-file=logs/checkstyle.xml --standard=PSR ../src/" />
+   <arg line="--report=checkstyle --report-file=${basedir}/build/logs/checkstyle.xml --standard=PSR ${basedir}/src/" />
   </exec>
  </target>
 
  <target name="phpdoc" description="Generate API documentation">
  <exec executable="phpdoc">
-  <arg line="-d ../src -t ../doc" />
+  <arg line="-d ${basedir}/src -t ${basedir}/doc" />
  </exec>
 </target>
 
  <target name="phpmd" description="Perform project mess detection using PHPMD and print human readable output. Intended for usage on the command line before committing.">
   <exec executable="phpmd">
-   <arg path="${basedir}/../src" />
+   <arg path="${basedir}/src" />
    <arg value="text" />
-   <arg value="${basedir}/phpmd.xml" />
+   <arg value="${basedir}/build/phpmd.xml" />
   </exec>
  </target>
 
  <target name="phpmd-ci" description="Perform project mess detection using PHPMD creating a log file for the continuous integration server">
   <exec executable="phpmd">
-   <arg path="../src" />
+   <arg path="${basedir}/src" />
    <arg value="xml" />
-   <arg value="phpmd.xml" />
+   <arg value="${basedir}/build/phpmd.xml" />
    <arg value="--reportfile" />
-   <arg value="logs/pmd.xml" />
+   <arg value="${basedir}/build/logs/pmd.xml" />
   </exec>
  </target>
 
- <target name="build" depends="prepstructure,phpcs,phpdoc,phpmd,phpmd-ci"/>
+ <target name="build" depends="prepstructure,phpcpd,phpcs,phpdoc,phpmd,phpmd-ci"/>
 
 </project>
