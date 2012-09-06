@@ -36,7 +36,8 @@ class Bootloader
      *
      * @return
      */
-    public function setReporting() {
+    public function setReporting()
+    {
 
         if ($this->config['general.debug'] == true) {
             error_reporting(E_ALL);
@@ -53,7 +54,7 @@ class Bootloader
     protected function stripSlashesDeep($value)
     {
 
-	$value = is_array($value) ? array_map('stripSlashesDeep', $value) : stripslashes($value);
+        $value = is_array($value) ? array_map('stripSlashesDeep', $value) : stripslashes($value);
 
         return $value;
 
@@ -113,7 +114,7 @@ class Bootloader
     public function callHook()
     {
 
-	global $url;
+        global $url;
 	global $default;
 
 	$queryString = array();
@@ -139,7 +140,7 @@ class Bootloader
 	$controllerName = ucfirst($controller);
         $controller = '\\' . $this->config['general.namespace'] . '\\Controller\\' . $controllerName;
 	$dispatch = new $controller($action, $this->pimple);
-	if ((int)method_exists($controller, $action)) {
+	if ((int) method_exists($controller, $action)) {
             call_user_func_array(array($dispatch,"beforeAction"),$queryString);
             call_user_func_array(array($dispatch,$action),$queryString);
             call_user_func_array(array($dispatch,"afterAction"),$queryString);
