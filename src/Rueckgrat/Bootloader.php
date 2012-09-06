@@ -41,10 +41,10 @@ class Bootloader
 
         if ($this->config['general.debug'] == true) {
             error_reporting(E_ALL);
-            ini_set('display_errors','On');
+            ini_set('display_errors', 'On');
         } else {
             error_reporting(E_ALL);
-            ini_set('display_errors','Off');
+            ini_set('display_errors', 'Off');
             ini_set('log_errors', 'On');
             ini_set('error_log', '../log/error.log');
         }
@@ -92,7 +92,7 @@ class Bootloader
             $dispatch = new $controllerName($action, $config);
             $dispatch->render = $render;
 
-            return call_user_func_array(array($dispatch,$action),$queryString);
+            return call_user_func_array(array($dispatch, $action), $queryString);
 
     }
 
@@ -115,9 +115,9 @@ class Bootloader
     {
 
         global $url;
-	global $default;
+        global $default;
 
-	$queryString = array();
+        $queryString = array();
 
 	if (!isset($url)) {
             $controller = $default['controller'];
@@ -126,7 +126,7 @@ class Bootloader
             $url = str_replace('redirect:/public/index.php/', '', $url);
             $url = $this->routeURL($url);
             $urlArray = array();
-            $urlArray = explode("/",$url);
+            $urlArray = explode("/", $url);
             $controller = $urlArray[0];
             array_shift($urlArray);
             if (isset($urlArray[0])) {
@@ -141,12 +141,12 @@ class Bootloader
         $controller = '\\' . $this->config['general.namespace'] . '\\Controller\\' . $controllerName;
 	$dispatch = new $controller($action, $this->pimple);
 	if ((int) method_exists($controller, $action)) {
-            call_user_func_array(array($dispatch,"beforeAction"),$queryString);
-            call_user_func_array(array($dispatch,$action),$queryString);
-            call_user_func_array(array($dispatch,"afterAction"),$queryString);
-	} else {
+            call_user_func_array(array($dispatch, "beforeAction"), $queryString);
+            call_user_func_array(array($dispatch, $action), $queryString);
+            call_user_func_array(array($dispatch, "afterAction"), $queryString);
+        } else {
 
-	}
+        }
 
     }
 
