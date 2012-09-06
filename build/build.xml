@@ -20,7 +20,7 @@
 
  <target name="phpdoc" description="Generate API documentation">
  <exec executable="phpdoc">
-  <arg line="-d ../src -t ../doc --template responsive" />
+  <arg line="-d ../src -t ../doc" />
  </exec>
 </target>
 
