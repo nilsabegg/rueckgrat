@@ -38,13 +38,11 @@ class Bootloader
      */
     public function setReporting() {
 
-        if ($this->config['general.debug'] == true)
-        {
+        if ($this->config['general.debug'] == true) {
             error_reporting(E_ALL);
             ini_set('display_errors','On');
         }
-        else
-        {
+        else {
             error_reporting(E_ALL);
             ini_set('display_errors','Off');
             ini_set('log_errors', 'On');
@@ -65,18 +63,10 @@ class Bootloader
     public function unregisterGlobals()
     {
 
-        if (ini_get('register_globals'))
-        {
+        if (ini_get('register_globals')) {
             $array = array('_SESSION', '_POST', '_GET', '_COOKIE', '_REQUEST', '_SERVER', '_ENV', '_FILES');
-            foreach ($array as $value)
-            {
-                foreach ($GLOBALS[$value] as $key => $var)
-                {
-                    if ($var === $GLOBALS[$key])
-                    {
-                        unset($GLOBALS[$key]);
-                    }
-                }
+            foreach ($array as $value) {
+                $this->unregisterGlobal($value);
             }
         }
 
@@ -85,8 +75,7 @@ class Bootloader
     public function removeMagicQuotes()
     {
 
-        if (get_magic_quotes_gpc() == true)
-        {
+        if (get_magic_quotes_gpc() == true) {
             $_GET    = $this->stripSlashesDeep($_GET   );
             $_POST   = $this->stripSlashesDeep($_POST  );
             $_COOKIE = $this->stripSlashesDeep($_COOKIE);
@@ -112,11 +101,8 @@ class Bootloader
     {
 
         global $routing;
-        foreach ( $routing as $pattern => $result )
-        {
-            if ( preg_match( $pattern, $url ) )
-            {
-
+        foreach ($routing as $pattern => $result) {
+            if (preg_match( $pattern, $url)) {
                 return preg_replace( $pattern, $result, $url );
             }
         }
@@ -133,26 +119,22 @@ class Bootloader
 
 	$queryString = array();
 
-	if (!isset($url))
-        {
+	if (!isset($url)) {
             $controller = $default['controller'];
             $action = $default['action'];
 	}
-        else
-        {
+        else {
             $url = str_replace('redirect:/public/index.php/', '', $url);
             $url = $this->routeURL($url);
             $urlArray = array();
             $urlArray = explode("/",$url);
             $controller = $urlArray[0];
             array_shift($urlArray);
-            if (isset($urlArray[0]))
-            {
+            if (isset($urlArray[0])) {
                 $action = $urlArray[0];
                 array_shift($urlArray);
             }
-            else
-            {
+            else {
                 $action = 'index'; // Default Action
             }
             $queryString = $urlArray;
@@ -160,16 +142,25 @@ class Bootloader
 	$controllerName = ucfirst($controller);
         $controller = '\\' . $this->config['general.namespace'] . '\\Controller\\' . $controllerName;
 	$dispatch = new $controller($action, $this->pimple);
-	if ((int)method_exists($controller, $action))
-        {
+	if ((int)method_exists($controller, $action)) {
             call_user_func_array(array($dispatch,"beforeAction"),$queryString);
             call_user_func_array(array($dispatch,$action),$queryString);
             call_user_func_array(array($dispatch,"afterAction"),$queryString);
 	}
-        else
-        {
+        else {
 
 	}
+
+    }
+
+    protected function unregisterGlobal($value)
+    {
+
+        foreach ($GLOBALS[$value] as $key => $var) {
+            if ($var === $GLOBALS[$key]) {
+                unset($GLOBALS[$key]);
+            }
+        }
 
     }
 }
