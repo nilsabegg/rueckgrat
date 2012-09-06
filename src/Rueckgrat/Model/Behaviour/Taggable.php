@@ -4,7 +4,7 @@ namespace Rueckgrat\Model\Behaviour;
 /**
  *
  */
-trait Taggable {
+class Taggable {
 
     /**
      * seperator

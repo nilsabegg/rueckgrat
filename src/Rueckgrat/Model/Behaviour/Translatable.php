@@ -5,7 +5,7 @@ namespace Rueckgrat\Model\Behaviour;
 /**
  *
  */
-trait Translatable
+class Translatable
 {
 
     protected $translatables = array();
