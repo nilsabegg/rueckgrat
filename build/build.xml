@@ -24,6 +24,6 @@
  </exec>
 </target>
 
- <target name="build" depends="prepstructure,phpcs"/>
+ <target name="build" depends="prepstructure,phpcs,phpdoc"/>
 
 </project>
