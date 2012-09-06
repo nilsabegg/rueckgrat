@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project name="Rueckgrat" default="build" basedir=".">
- <property name="source" value="src"/>
+ <property name="source" value="./src"/>
 
  <target name="prepstructure" description="Prepare the structure of the codebase">
-  <delete dir="${basedir}/build/docs"/>
+  <delete dir="${basedir}/doc"/>
   <delete dir="${basedir}/build/logs"/>
   <delete dir="${basedir}/build/testresults"/>
-  <mkdir dir="${basedir}/build/docs"/>
+  <mkdir dir="${basedir}/doc"/>
   <mkdir dir="${basedir}/build/logs"/>
   <mkdir dir="${basedir}/build/testresults"/>
  </target>
@@ -17,6 +17,12 @@
    <arg line="--report=checkstyle --report-file=${basedir}/build/logs/checkstyle.xml --standard=build/phpcs.xml ${source}/" />
   </exec>
  </target>
+
+ <target name="phpdoc" description="Generate API documentation">
+ <exec executable="phpdoc">
+  <arg line="-d ${source} -t ${basedir}/doc" />
+ </exec>
+</target>
 
  <target name="build" depends="prepstructure,phpcs"/>
 
