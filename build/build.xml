@@ -12,5 +12,12 @@
   <mkdir dir="${basedir}/build/testresults"/>
  </target>
 
- <target name="build" depends="prepstructure"/>
+ <target name="phpcs" description="Generate checkstyle.xml using PHP_CodeSniffer">
+  <exec executable="phpcs">
+   <arg line="--report=checkstyle --report-file=${basedir}/build/logs/checkstyle.xml --standard=build/phpcs.xml ${source}/" />
+  </exec>
+ </target>
+
+ <target name="build" depends="prepstructure,phpcs"/>
+ 
 </project>
