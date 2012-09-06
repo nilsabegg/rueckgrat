@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpcs version="1.3.6">
+ <file name="/var/www/rueckgrat/src/Rueckgrat/Admin/Controller.php" errors="5" warnings="0">
+  <error line="1" column="1" source="Generic.Files.LineEndings.InvalidEOLChar" severity="5">End of line character is invalid; expected &quot;\n&quot; but found &quot;\r\n&quot;</error>
+  <error line="20" column="16" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 4 spaces, found 8</error>
+  <error line="20" column="55" source="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine" severity="5">Opening brace should be on a new line</error>
+  <error line="32" column="19" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 4 spaces, found 8</error>
+  <error line="47" column="19" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 4 spaces, found 8</error>
+ </file>
+ <file name="/var/www/rueckgrat/src/Rueckgrat/Autoloader.php" errors="2" warnings="10">
+  <warning line="13" column="1" source="Generic.Files.LineLength.TooLong" severity="5">Line exceeds 80 characters; contains 81 characters</warning>
+  <warning line="42" column="1" source="Generic.Files.LineLength.TooLong" severity="5">Line exceeds 80 characters; contains 90 characters</warning>
+  <warning line="52" column="1" source="Generic.Files.LineLength.TooLong" severity="5">Line exceeds 80 characters; contains 90 characters</warning>
+  <warning line="62" column="1" source="Generic.Files.LineLength.TooLong" severity="5">Line exceeds 80 characters; contains 92 characters</warning>
+  <warning line="72" column="1" source="Generic.Files.LineLength.TooLong" severity="5">Line exceeds 80 characters; contains 92 characters</warning>
+  <warning line="82" column="1" source="Generic.Files.LineLength.TooLong" severity="5">Line exceeds 80 characters; contains 84 characters</warning>
+  <warning line="92" column="1" source="Generic.Files.LineLength.TooLong" severity="5">Line exceeds 80 characters; contains 84 characters</warning>
+  <error line="125" column="170" source="Generic.Files.LineLength.MaxExceeded" severity="5">Line exceeds maximum limit of 120 characters; contains 169 characters</error>
+  <warning line="128" column="93" source="Generic.Files.LineLength.TooLong" severity="5">Line exceeds 80 characters; contains 92 characters</warning>
+  <error line="131" column="124" source="Generic.Files.LineLength.MaxExceeded" severity="5">Line exceeds maximum limit of 120 characters; contains 123 characters</error>
+  <warning line="133" column="100" source="Generic.Files.LineLength.TooLong" severity="5">Line exceeds 80 characters; contains 99 characters</warning>
+  <warning line="135" column="113" source="Generic.Files.LineLength.TooLong" severity="5">Line exceeds 80 characters; contains 112 characters</warning>
+ </file>
+ <file name="/var/www/rueckgrat/src/Rueckgrat/Bootloader.php" errors="46" warnings="5">
+  <warning line="25" column="103" source="Generic.Files.LineLength.TooLong" severity="5">Line exceeds 80 characters; contains 102 characters</warning>
+  <error line="39" column="36" source="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine" severity="5">Opening brace should be on a new line</error>
+  <error line="41" column="9" source="Squiz.ControlStructures.ControlSignature" severity="5">Expected &quot;if (...) {\n&quot;; found &quot;if (...)\n        {\n&quot;</error>
+  <error line="44" column="13" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma" severity="5">No space found after comma in function call</error>
+  <error line="46" column="9" source="Squiz.ControlStructures.ControlSignature" severity="5">Expected &quot;} else {\n&quot;; found &quot;}\n        else\n        {\n&quot;</error>
+  <error line="49" column="13" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma" severity="5">No space found after comma in function call</error>
+  <error line="59" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="59" column="2" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 8 spaces, found 1</error>
+  <warning line="59" column="91" source="Generic.Files.LineLength.TooLong" severity="5">Line exceeds 80 characters; contains 90 characters</warning>
+  <error line="68" column="9" source="Squiz.ControlStructures.ControlSignature" severity="5">Expected &quot;if (...) {\n&quot;; found &quot;if (...)\n        {\n&quot;</error>
+  <warning line="70" column="109" source="Generic.Files.LineLength.TooLong" severity="5">Line exceeds 80 characters; contains 108 characters</warning>
+  <error line="71" column="13" source="Squiz.ControlStructures.ControlSignature" severity="5">Expected &quot;foreach (...) {\n&quot;; found &quot;foreach (...)\n            {\n&quot;</error>
+  <error line="73" column="17" source="Squiz.ControlStructures.ControlSignature" severity="5">Expected &quot;foreach (...) {\n&quot;; found &quot;foreach (...)\n                {\n&quot;</error>
+  <error line="75" column="21" source="Squiz.ControlStructures.ControlSignature" severity="5">Expected &quot;if (...) {\n&quot;; found &quot;if (...)\n                    {\n&quot;</error>
+  <error line="88" column="9" source="Squiz.ControlStructures.ControlSignature" severity="5">Expected &quot;if (...) {\n&quot;; found &quot;if (...)\n        {\n&quot;</error>
+  <warning line="99" column="90" source="Generic.Files.LineLength.TooLong" severity="5">Line exceeds 80 characters; contains 89 characters</warning>
+  <error line="106" column="20" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma" severity="5">No space found after comma in function call</error>
+  <error line="115" column="9" source="Squiz.ControlStructures.ControlSignature" severity="5">Expected &quot;foreach (...) {\n&quot;; found &quot;foreach (...)\n        {\n&quot;</error>
+  <error line="115" column="9" source="Squiz.ControlStructures.ForEachLoopDeclaration.SpaceAfterOpen" severity="5">Space found after opening bracket of FOREACH loop</error>
+  <error line="115" column="9" source="Squiz.ControlStructures.ForEachLoopDeclaration.SpaceBeforeClose" severity="5">Space found before closing bracket of FOREACH loop</error>
+  <error line="117" column="13" source="Squiz.ControlStructures.ControlSignature" severity="5">Expected &quot;if (...) {\n&quot;; found &quot;if (...)\n            {\n&quot;</error>
+  <error line="131" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="131" column="2" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 8 spaces, found 1</error>
+  <error line="132" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="132" column="2" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 8 spaces, found 1</error>
+  <error line="134" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="134" column="2" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 8 spaces, found 1</error>
+  <error line="136" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="136" column="2" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 8 spaces, found 1</error>
+  <error line="136" column="2" source="Squiz.ControlStructures.ControlSignature" severity="5">Expected &quot;if (...) {\n&quot;; found &quot;if (...)\n        {\n&quot;</error>
+  <error line="140" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="141" column="9" source="Squiz.ControlStructures.ControlSignature" severity="5">Expected &quot;} else {\n&quot;; found &quot;}\n        else\n        {\n&quot;</error>
+  <error line="146" column="25" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma" severity="5">No space found after comma in function call</error>
+  <error line="149" column="13" source="Squiz.ControlStructures.ControlSignature" severity="5">Expected &quot;if (...) {\n&quot;; found &quot;if (...)\n            {\n&quot;</error>
+  <error line="154" column="13" source="Squiz.ControlStructures.ControlSignature" severity="5">Expected &quot;} else {\n&quot;; found &quot;}\n            else\n            {\n&quot;</error>
+  <error line="159" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="160" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="160" column="2" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 8 spaces, found 1</error>
+  <warning line="161" column="102" source="Generic.Files.LineLength.TooLong" severity="5">Line exceeds 80 characters; contains 101 characters</warning>
+  <error line="162" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="162" column="2" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 8 spaces, found 1</error>
+  <error line="163" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="163" column="2" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 8 spaces, found 1</error>
+  <error line="163" column="2" source="Squiz.ControlStructures.ControlSignature" severity="5">Expected &quot;if (...) {\n&quot;; found &quot;if (...)\n        {\n&quot;</error>
+  <error line="163" column="6" source="Generic.Formatting.SpaceAfterCast.NoSpace" severity="5">A cast statement must be followed by a single space</error>
+  <error line="165" column="13" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma" severity="5">No space found after comma in function call</error>
+  <error line="166" column="13" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma" severity="5">No space found after comma in function call</error>
+  <error line="167" column="13" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma" severity="5">No space found after comma in function call</error>
+  <error line="168" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="169" column="9" source="Squiz.ControlStructures.ControlSignature" severity="5">Expected &quot;} else {\n&quot;; found &quot;}\n        else\n        {\n&quot;</error>
+  <error line="172" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+ </file>
+ <file name="/var/www/rueckgrat/src/Rueckgrat/Controller/Controller.php" errors="52" warnings="8">
+  <error line="1" column="1" source="Generic.Files.LineEndings.InvalidEOLChar" severity="5">End of line character is invalid; expected &quot;\n&quot; but found &quot;\r\n&quot;</error>
+  <error line="14" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="14" column="2" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 4 spaces, found 1</error>
+  <error line="26" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="26" column="2" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 4 spaces, found 1</error>
+  <error line="66" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="66" column="2" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 4 spaces, found 1</error>
+  <error line="66" column="9" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 4 spaces, found 1</error>
+  <error line="67" column="9" source="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceIndent" severity="5">Opening brace indented incorrectly; expected 1 spaces, found 8</error>
+  <error line="74" column="13" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 8 spaces, found 12</error>
+  <error line="74" column="13" source="Squiz.ControlStructures.ControlSignature" severity="5">Expected &quot;if (...) {\n&quot;; found &quot;if (...)\n            {\n&quot;</error>
+  <error line="78" column="13" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 8 spaces, found 12</error>
+  <warning line="80" column="107" source="Generic.Files.LineLength.TooLong" severity="5">Line exceeds 80 characters; contains 106 characters</warning>
+  <warning line="82" column="86" source="Generic.Files.LineLength.TooLong" severity="5">Line exceeds 80 characters; contains 85 characters</warning>
+  <error line="84" column="13" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 8 spaces, found 12</error>
+  <error line="85" column="137" source="Generic.Files.LineLength.MaxExceeded" severity="5">Line exceeds maximum limit of 120 characters; contains 136 characters</error>
+  <error line="90" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="101" column="16" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 4 spaces, found 8</error>
+  <error line="115" column="16" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 4 spaces, found 8</error>
+  <error line="125" column="19" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 4 spaces, found 8</error>
+  <error line="130" column="13" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 8 spaces, found 12</error>
+  <error line="130" column="13" source="Squiz.ControlStructures.ControlSignature" severity="5">Expected &quot;foreach (...) {\n&quot;; found &quot;foreach (...)\n            {\n&quot;</error>
+  <error line="135" column="13" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 8 spaces, found 12</error>
+  <error line="135" column="13" source="Squiz.ControlStructures.ControlSignature" severity="5">Expected &quot;foreach (...) {\n&quot;; found &quot;foreach (...)\n            {\n&quot;</error>
+  <error line="137" column="17" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 12 spaces, found 16</error>
+  <error line="138" column="21" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 16 spaces, found 20</error>
+  <warning line="140" column="86" source="Generic.Files.LineLength.TooLong" severity="5">Line exceeds 80 characters; contains 85 characters</warning>
+  <error line="143" column="17" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 12 spaces, found 16</error>
+  <error line="143" column="17" source="Squiz.ControlStructures.ControlSignature" severity="5">Expected &quot;} else {\n&quot;; found &quot;}\n                else {\n&quot;</error>
+  <error line="159" column="19" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 4 spaces, found 8</error>
+  <error line="173" column="19" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 4 spaces, found 8</error>
+  <error line="175" column="13" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 8 spaces, found 12</error>
+  <error line="181" column="13" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 8 spaces, found 12</error>
+  <error line="181" column="13" source="Squiz.ControlStructures.ControlSignature" severity="5">Expected &quot;} else {\n&quot;; found &quot;}\n            else {\n&quot;</error>
+  <error line="201" column="19" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 4 spaces, found 8</error>
+  <warning line="205" column="117" source="Generic.Files.LineLength.TooLong" severity="5">Line exceeds 80 characters; contains 116 characters</warning>
+  <error line="222" column="19" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 4 spaces, found 8</error>
+  <error line="241" column="124" source="Generic.Files.LineLength.MaxExceeded" severity="5">Line exceeds maximum limit of 120 characters; contains 123 characters</error>
+  <error line="252" column="19" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 4 spaces, found 8</error>
+  <error line="257" column="1" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 8 spaces, found 0</error>
+  <warning line="258" column="1" source="Generic.Files.LineLength.TooLong" severity="5">Line exceeds 80 characters; contains 90 characters</warning>
+  <error line="258" column="1" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 8 spaces, found 0</error>
+  <warning line="259" column="1" source="Generic.Files.LineLength.TooLong" severity="5">Line exceeds 80 characters; contains 81 characters</warning>
+  <error line="259" column="1" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 8 spaces, found 0</error>
+  <error line="260" column="1" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 8 spaces, found 0</error>
+  <error line="261" column="1" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 8 spaces, found 0</error>
+  <error line="267" column="19" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 4 spaces, found 8</error>
+  <error line="272" column="1" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 8 spaces, found 0</error>
+  <warning line="273" column="1" source="Generic.Files.LineLength.TooLong" severity="5">Line exceeds 80 characters; contains 90 characters</warning>
+  <error line="273" column="1" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 8 spaces, found 0</error>
+  <warning line="274" column="1" source="Generic.Files.LineLength.TooLong" severity="5">Line exceeds 80 characters; contains 81 characters</warning>
+  <error line="274" column="1" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 8 spaces, found 0</error>
+  <error line="275" column="1" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 8 spaces, found 0</error>
+  <error line="276" column="1" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 8 spaces, found 0</error>
+  <error line="290" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="290" column="2" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 4 spaces, found 1</error>
+  <error line="290" column="12" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 4 spaces, found 1</error>
+  <error line="291" column="9" source="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceIndent" severity="5">Opening brace indented incorrectly; expected 1 spaces, found 8</error>
+  <error line="293" column="26" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma" severity="5">No space found after comma in function call</error>
+  <error line="295" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+ </file>
+ <file name="/var/www/rueckgrat/src/Rueckgrat/DependencyInjectionContainer.php" errors="1" warnings="2">
+  <error line="10" column="42" source="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine" severity="5">Opening brace should be on a new line</error>
+  <warning line="25" column="115" source="Generic.Files.LineLength.TooLong" severity="5">Line exceeds 80 characters; contains 114 characters</warning>
+  <warning line="26" column="105" source="Generic.Files.LineLength.TooLong" severity="5">Line exceeds 80 characters; contains 104 characters</warning>
+ </file>
+ <file name="/var/www/rueckgrat/src/Rueckgrat/File/Image/imagecropper.class.php" errors="94" warnings="3">
+  <error line="5" column="35" source="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine" severity="5">Opening brace should be on a new line</error>
+  <error line="7" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="7" column="2" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 8 spaces, found 1</error>
+  <error line="8" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="8" column="2" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 8 spaces, found 1</error>
+  <error line="9" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="9" column="2" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 8 spaces, found 1</error>
+  <error line="10" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="10" column="2" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 8 spaces, found 1</error>
+  <error line="11" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="11" column="2" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 8 spaces, found 1</error>
+  <error line="14" column="64" source="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine" severity="5">Opening brace should be on a new line</error>
+  <error line="18" column="23" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma" severity="5">No space found after comma in function call</error>
+  <error line="18" column="23" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma" severity="5">No space found after comma in function call</error>
+  <error line="18" column="23" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma" severity="5">No space found after comma in function call</error>
+  <error line="18" column="23" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma" severity="5">No space found after comma in function call</error>
+  <warning line="18" column="108" source="Generic.Files.LineLength.TooLong" severity="5">Line exceeds 80 characters; contains 107 characters</warning>
+  <error line="22" column="5" source="Squiz.Scope.MethodScope.Missing" severity="5">No scope modifier specified for function &quot;resize&quot;</error>
+  <error line="22" column="101" source="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine" severity="5">Opening brace should be on a new line</error>
+  <warning line="22" column="102" source="Generic.Files.LineLength.TooLong" severity="5">Line exceeds 80 characters; contains 101 characters</warning>
+  <error line="23" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="23" column="2" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 8 spaces, found 1</error>
+  <error line="24" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="24" column="2" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 8 spaces, found 1</error>
+  <error line="25" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="26" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="26" column="2" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 8 spaces, found 1</error>
+  <error line="27" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="27" column="2" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 8 spaces, found 1</error>
+  <error line="28" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="28" column="2" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 8 spaces, found 1</error>
+  <error line="28" column="14" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma" severity="5">No space found after comma in function call</error>
+  <error line="29" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="29" column="2" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 8 spaces, found 1</error>
+  <error line="30" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="30" column="3" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 12 spaces, found 2</error>
+  <error line="31" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="31" column="4" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 16 spaces, found 3</error>
+  <error line="32" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="33" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="33" column="6" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 12 spaces, found 5</error>
+  <error line="34" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="34" column="3" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 12 spaces, found 2</error>
+  <error line="35" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="35" column="3" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 12 spaces, found 2</error>
+  <error line="36" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="36" column="4" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 16 spaces, found 3</error>
+  <error line="37" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="38" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="38" column="6" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 12 spaces, found 5</error>
+  <error line="39" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="39" column="3" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 12 spaces, found 2</error>
+  <error line="40" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="40" column="4" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 16 spaces, found 3</error>
+  <error line="41" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="42" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="43" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="43" column="2" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 8 spaces, found 1</error>
+  <error line="43" column="2" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma" severity="5">No space found after comma in function call</error>
+  <error line="43" column="2" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma" severity="5">No space found after comma in function call</error>
+  <error line="43" column="2" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma" severity="5">No space found after comma in function call</error>
+  <error line="43" column="2" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma" severity="5">No space found after comma in function call</error>
+  <error line="43" column="2" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma" severity="5">No space found after comma in function call</error>
+  <error line="43" column="2" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma" severity="5">No space found after comma in function call</error>
+  <error line="43" column="2" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma" severity="5">No space found after comma in function call</error>
+  <error line="43" column="2" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma" severity="5">No space found after comma in function call</error>
+  <error line="43" column="2" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma" severity="5">No space found after comma in function call</error>
+  <warning line="43" column="117" source="Generic.Files.LineLength.TooLong" severity="5">Line exceeds 80 characters; contains 116 characters</warning>
+  <error line="44" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="44" column="2" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 8 spaces, found 1</error>
+  <error line="45" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="45" column="3" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 12 spaces, found 2</error>
+  <error line="46" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="46" column="6" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 16 spaces, found 5</error>
+  <error line="46" column="6" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma" severity="5">No space found after comma in function call</error>
+  <error line="47" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="48" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="48" column="8" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 12 spaces, found 7</error>
+  <error line="49" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="49" column="3" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 12 spaces, found 2</error>
+  <error line="50" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="50" column="3" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 12 spaces, found 2</error>
+  <error line="51" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="51" column="6" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 16 spaces, found 5</error>
+  <error line="51" column="6" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma" severity="5">No space found after comma in function call</error>
+  <error line="51" column="6" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma" severity="5">No space found after comma in function call</error>
+  <error line="52" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="53" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="53" column="3" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 12 spaces, found 2</error>
+  <error line="54" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="54" column="3" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 12 spaces, found 2</error>
+  <error line="55" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="55" column="4" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 16 spaces, found 3</error>
+  <error line="55" column="4" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma" severity="5">No space found after comma in function call</error>
+  <error line="56" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="58" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="58" column="2" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 8 spaces, found 1</error>
+ </file>
+ <file name="/var/www/rueckgrat/src/Rueckgrat/File/Image/imageuploader.class.php" errors="104" warnings="6">
+  <error line="24" column="73" source="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine" severity="5">Opening brace should be on a new line</error>
+  <error line="31" column="9" source="Squiz.ControlStructures.ControlSignature" severity="5">Expected &quot;} else {\n&quot;; found &quot;}\n        else {\n&quot;</error>
+  <error line="43" column="39" source="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine" severity="5">Opening brace should be on a new line</error>
+  <warning line="54" column="83" source="Generic.Files.LineLength.TooLong" severity="5">Line exceeds 80 characters; contains 82 characters</warning>
+  <warning line="59" column="93" source="Generic.Files.LineLength.TooLong" severity="5">Line exceeds 80 characters; contains 92 characters</warning>
+  <error line="60" column="128" source="Generic.Files.LineLength.MaxExceeded" severity="5">Line exceeds maximum limit of 120 characters; contains 127 characters</error>
+  <error line="66" column="48" source="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine" severity="5">Opening brace should be on a new line</error>
+  <error line="71" column="9" source="Squiz.ControlStructures.ControlSignature" severity="5">Expected &quot;} else {\n&quot;; found &quot;}\n        else {\n&quot;</error>
+  <error line="77" column="43" source="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine" severity="5">Opening brace should be on a new line</error>
+  <error line="83" column="9" source="Squiz.ControlStructures.ControlSignature" severity="5">Expected &quot;} else {\n&quot;; found &quot;}\n        else {\n&quot;</error>
+  <error line="89" column="41" source="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine" severity="5">Opening brace should be on a new line</error>
+  <error line="95" column="9" source="Squiz.ControlStructures.ControlSignature" severity="5">Expected &quot;} else {\n&quot;; found &quot;}\n        else {\n&quot;</error>
+  <error line="101" column="44" source="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine" severity="5">Opening brace should be on a new line</error>
+  <error line="109" column="9" source="Squiz.ControlStructures.ControlSignature" severity="5">Expected &quot;} else {\n&quot;; found &quot;}\n        else {\n&quot;</error>
+  <error line="115" column="42" source="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine" severity="5">Opening brace should be on a new line</error>
+  <error line="123" column="9" source="Squiz.ControlStructures.ControlSignature" severity="5">Expected &quot;} else {\n&quot;; found &quot;}\n        else {\n&quot;</error>
+  <error line="134" column="40" source="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine" severity="5">Opening brace should be on a new line</error>
+  <error line="140" column="9" source="Squiz.ControlStructures.ControlSignature" severity="5">Expected &quot;} else {\n&quot;; found &quot;}\n        else {\n&quot;</error>
+  <warning line="141" column="88" source="Generic.Files.LineLength.TooLong" severity="5">Line exceeds 80 characters; contains 87 characters</warning>
+  <error line="146" column="40" source="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine" severity="5">Opening brace should be on a new line</error>
+  <error line="153" column="9" source="Squiz.ControlStructures.ControlSignature" severity="5">Expected &quot;} else {\n&quot;; found &quot;}\n        else {\n&quot;</error>
+  <error line="154" column="156" source="Generic.Files.LineLength.MaxExceeded" severity="5">Line exceeds maximum limit of 120 characters; contains 155 characters</error>
+  <error line="158" column="39" source="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine" severity="5">Opening brace should be on a new line</error>
+  <error line="161" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="161" column="2" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 8 spaces, found 1</error>
+  <error line="167" column="42" source="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine" severity="5">Opening brace should be on a new line</error>
+  <error line="176" column="53" source="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine" severity="5">Opening brace should be on a new line</error>
+  <error line="180" column="9" source="Squiz.ControlStructures.ControlSignature" severity="5">Expected &quot;} else if (...) {\n&quot;; found &quot;}\n        else if (...) {\n&quot;</error>
+  <error line="183" column="9" source="Squiz.ControlStructures.ControlSignature" severity="5">Expected &quot;} else if (...) {\n&quot;; found &quot;}\n        else if (...) {\n&quot;</error>
+  <error line="186" column="9" source="Squiz.ControlStructures.ControlSignature" severity="5">Expected &quot;} else {\n&quot;; found &quot;}\n        else {\n&quot;</error>
+  <warning line="187" column="95" source="Generic.Files.LineLength.TooLong" severity="5">Line exceeds 80 characters; contains 94 characters</warning>
+  <error line="193" column="41" source="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine" severity="5">Opening brace should be on a new line</error>
+  <error line="202" column="87" source="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine" severity="5">Opening brace should be on a new line</error>
+  <warning line="202" column="88" source="Generic.Files.LineLength.TooLong" severity="5">Line exceeds 80 characters; contains 87 characters</warning>
+  <error line="203" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="203" column="2" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 8 spaces, found 1</error>
+  <error line="204" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="204" column="2" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 8 spaces, found 1</error>
+  <error line="205" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="205" column="2" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 8 spaces, found 1</error>
+  <error line="206" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="206" column="2" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 8 spaces, found 1</error>
+  <error line="207" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="207" column="2" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 8 spaces, found 1</error>
+  <error line="207" column="14" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma" severity="5">No space found after comma in function call</error>
+  <error line="208" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="208" column="2" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 8 spaces, found 1</error>
+  <error line="209" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="209" column="3" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 12 spaces, found 2</error>
+  <error line="210" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="210" column="4" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 16 spaces, found 3</error>
+  <error line="211" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="212" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="212" column="6" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 12 spaces, found 5</error>
+  <error line="213" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="213" column="3" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 12 spaces, found 2</error>
+  <error line="214" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="214" column="3" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 12 spaces, found 2</error>
+  <error line="215" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="215" column="4" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 16 spaces, found 3</error>
+  <error line="216" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="217" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="217" column="6" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 12 spaces, found 5</error>
+  <error line="218" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="218" column="3" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 12 spaces, found 2</error>
+  <error line="219" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="219" column="4" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 16 spaces, found 3</error>
+  <error line="220" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="221" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="222" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="222" column="2" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 8 spaces, found 1</error>
+  <error line="222" column="2" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma" severity="5">No space found after comma in function call</error>
+  <error line="222" column="2" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma" severity="5">No space found after comma in function call</error>
+  <error line="222" column="2" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma" severity="5">No space found after comma in function call</error>
+  <error line="222" column="2" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma" severity="5">No space found after comma in function call</error>
+  <error line="222" column="2" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma" severity="5">No space found after comma in function call</error>
+  <error line="222" column="2" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma" severity="5">No space found after comma in function call</error>
+  <error line="222" column="2" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma" severity="5">No space found after comma in function call</error>
+  <error line="222" column="2" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma" severity="5">No space found after comma in function call</error>
+  <error line="222" column="2" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma" severity="5">No space found after comma in function call</error>
+  <warning line="222" column="94" source="Generic.Files.LineLength.TooLong" severity="5">Line exceeds 80 characters; contains 93 characters</warning>
+  <error line="223" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="224" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="224" column="2" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 8 spaces, found 1</error>
+  <error line="225" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="225" column="3" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 12 spaces, found 2</error>
+  <error line="226" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="226" column="6" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 16 spaces, found 5</error>
+  <error line="226" column="6" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma" severity="5">No space found after comma in function call</error>
+  <error line="227" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="228" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="228" column="8" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 12 spaces, found 7</error>
+  <error line="229" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="229" column="3" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 12 spaces, found 2</error>
+  <error line="230" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="230" column="3" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 12 spaces, found 2</error>
+  <error line="231" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="231" column="6" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 16 spaces, found 5</error>
+  <error line="231" column="6" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma" severity="5">No space found after comma in function call</error>
+  <error line="231" column="6" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma" severity="5">No space found after comma in function call</error>
+  <error line="232" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="233" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="233" column="3" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 12 spaces, found 2</error>
+  <error line="234" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="234" column="3" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 12 spaces, found 2</error>
+  <error line="235" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="235" column="4" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 16 spaces, found 3</error>
+  <error line="235" column="4" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma" severity="5">No space found after comma in function call</error>
+  <error line="236" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+  <error line="238" column="1" source="Generic.WhiteSpace.DisallowTabIndent.TabsUsed" severity="5">Spaces must be used to indent lines; tabs are not allowed</error>
+ </file>
+ <file name="/var/www/rueckgrat/src/Rueckgrat/Model/Behaviour/Taggable.php" errors="25" warnings="1">
+  <error line="7" column="1" source="Generic.NamingConventions.UpperCaseConstantName.ConstantNotUpperCase" severity="5">Constants must be uppercase; expected TRAIT but found trait</error>
+  <error line="7" column="7" source="Generic.NamingConventions.UpperCaseConstantName.ConstantNotUpperCase" severity="5">Constants must be uppercase; expected TAGGABLE but found Taggable</error>
+  <error line="29" column="12" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 0 spaces, found 4</error>
+  <error line="29" column="38" source="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine" severity="5">Opening brace should be on a new line</error>
+  <error line="34" column="25" source="Generic.NamingConventions.UpperCaseConstantName.ConstantNotUpperCase" severity="5">Constants must be uppercase; expected TABLE but found table</error>
+  <error line="36" column="32" source="Generic.NamingConventions.UpperCaseConstantName.ConstantNotUpperCase" severity="5">Constants must be uppercase; expected TABLE but found table</error>
+  <warning line="37" column="86" source="Generic.Files.LineLength.TooLong" severity="5">Line exceeds 80 characters; contains 85 characters</warning>
+  <error line="55" column="12" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 0 spaces, found 4</error>
+  <error line="55" column="40" source="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine" severity="5">Opening brace should be on a new line</error>
+  <error line="57" column="9" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 4 spaces, found 8</error>
+  <error line="61" column="9" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 4 spaces, found 8</error>
+  <error line="74" column="12" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 0 spaces, found 4</error>
+  <error line="74" column="31" source="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine" severity="5">Opening brace should be on a new line</error>
+  <error line="76" column="25" source="Generic.NamingConventions.UpperCaseConstantName.ConstantNotUpperCase" severity="5">Constants must be uppercase; expected TABLE but found table</error>
+  <error line="78" column="32" source="Generic.NamingConventions.UpperCaseConstantName.ConstantNotUpperCase" severity="5">Constants must be uppercase; expected TABLE but found table</error>
+  <error line="79" column="131" source="Generic.Files.LineLength.MaxExceeded" severity="5">Line exceeds maximum limit of 120 characters; contains 130 characters</error>
+  <error line="95" column="12" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 0 spaces, found 4</error>
+  <error line="95" column="34" source="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine" severity="5">Opening brace should be on a new line</error>
+  <error line="106" column="12" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 0 spaces, found 4</error>
+  <error line="106" column="40" source="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine" severity="5">Opening brace should be on a new line</error>
+  <error line="108" column="37" source="Generic.NamingConventions.UpperCaseConstantName.ConstantNotUpperCase" severity="5">Constants must be uppercase; expected TABLE but found table</error>
+  <error line="108" column="65" source="Generic.NamingConventions.UpperCaseConstantName.ConstantNotUpperCase" severity="5">Constants must be uppercase; expected TABLE but found table</error>
+  <error line="108" column="131" source="Generic.NamingConventions.UpperCaseConstantName.ConstantNotUpperCase" severity="5">Constants must be uppercase; expected TABLE but found table</error>
+  <error line="108" column="155" source="Generic.NamingConventions.UpperCaseConstantName.ConstantNotUpperCase" severity="5">Constants must be uppercase; expected TABLE but found table</error>
+  <error line="108" column="179" source="Generic.NamingConventions.UpperCaseConstantName.ConstantNotUpperCase" severity="5">Constants must be uppercase; expected TABLE but found table</error>
+  <error line="108" column="211" source="Generic.Files.LineLength.MaxExceeded" severity="5">Line exceeds maximum limit of 120 characters; contains 210 characters</error>
+ </file>
+ <file name="/var/www/rueckgrat/src/Rueckgrat/Model/Behaviour/Translatable.php" errors="9" warnings="1">
+  <error line="8" column="1" source="Generic.NamingConventions.UpperCaseConstantName.ConstantNotUpperCase" severity="5">Constants must be uppercase; expected TRAIT but found trait</error>
+  <error line="8" column="7" source="Generic.NamingConventions.UpperCaseConstantName.ConstantNotUpperCase" severity="5">Constants must be uppercase; expected TRANSLATABLE but found Translatable</error>
+  <error line="13" column="15" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 0 spaces, found 4</error>
+  <error line="13" column="39" source="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine" severity="5">Opening brace should be on a new line</error>
+  <warning line="16" column="88" source="Generic.Files.LineLength.TooLong" severity="5">Line exceeds 80 characters; contains 87 characters</warning>
+  <error line="20" column="15" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 0 spaces, found 4</error>
+  <error line="20" column="50" source="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine" severity="5">Opening brace should be on a new line</error>
+  <error line="22" column="9" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 4 spaces, found 8</error>
+  <error line="27" column="15" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 0 spaces, found 4</error>
+  <error line="27" column="41" source="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine" severity="5">Opening brace should be on a new line</error>
+ </file>
+ <file name="/var/www/rueckgrat/src/Rueckgrat/Model/Behaviour/votable.php" errors="18" warnings="5">
+  <error line="3" column="1" source="Generic.NamingConventions.UpperCaseConstantName.ConstantNotUpperCase" severity="5">Constants must be uppercase; expected TRAIT but found trait</error>
+  <error line="3" column="7" source="Generic.NamingConventions.UpperCaseConstantName.ConstantNotUpperCase" severity="5">Constants must be uppercase; expected VOTABLE but found Votable</error>
+  <error line="5" column="12" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 0 spaces, found 4</error>
+  <error line="5" column="37" source="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine" severity="5">Opening brace should be on a new line</error>
+  <error line="7" column="42" source="Generic.NamingConventions.UpperCaseConstantName.ConstantNotUpperCase" severity="5">Constants must be uppercase; expected TABLE but found table</error>
+  <error line="8" column="32" source="Generic.NamingConventions.UpperCaseConstantName.ConstantNotUpperCase" severity="5">Constants must be uppercase; expected TABLE but found table</error>
+  <error line="8" column="156" source="Generic.Files.LineLength.MaxExceeded" severity="5">Line exceeds maximum limit of 120 characters; contains 155 characters</error>
+  <error line="9" column="32" source="Generic.NamingConventions.UpperCaseConstantName.ConstantNotUpperCase" severity="5">Constants must be uppercase; expected TABLE but found table</error>
+  <warning line="9" column="112" source="Generic.Files.LineLength.TooLong" severity="5">Line exceeds 80 characters; contains 111 characters</warning>
+  <warning line="10" column="87" source="Generic.Files.LineLength.TooLong" severity="5">Line exceeds 80 characters; contains 86 characters</warning>
+  <error line="16" column="12" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 0 spaces, found 4</error>
+  <error line="16" column="39" source="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine" severity="5">Opening brace should be on a new line</error>
+  <error line="18" column="42" source="Generic.NamingConventions.UpperCaseConstantName.ConstantNotUpperCase" severity="5">Constants must be uppercase; expected TABLE but found table</error>
+  <error line="19" column="32" source="Generic.NamingConventions.UpperCaseConstantName.ConstantNotUpperCase" severity="5">Constants must be uppercase; expected TABLE but found table</error>
+  <error line="19" column="156" source="Generic.Files.LineLength.MaxExceeded" severity="5">Line exceeds maximum limit of 120 characters; contains 155 characters</error>
+  <error line="20" column="32" source="Generic.NamingConventions.UpperCaseConstantName.ConstantNotUpperCase" severity="5">Constants must be uppercase; expected TABLE but found table</error>
+  <warning line="20" column="112" source="Generic.Files.LineLength.TooLong" severity="5">Line exceeds 80 characters; contains 111 characters</warning>
+  <warning line="21" column="87" source="Generic.Files.LineLength.TooLong" severity="5">Line exceeds 80 characters; contains 86 characters</warning>
+  <error line="27" column="12" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected 0 spaces, found 4</error>
+  <error line="27" column="34" source="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine" severity="5">Opening brace should be on a new line</error>
+  <error line="29" column="52" source="Generic.NamingConventions.UpperCaseConstantName.ConstantNotUpperCase" severity="5">Constants must be uppercase; expected TABLE but found table</error>
+  <error line="29" column="84" source="Generic.NamingConventions.UpperCaseConstantName.ConstantNotUpperCase" severity="5">Constants must be uppercase; expected TABLE but found table</error>
+  <warning line="29" column="101" source="Generic.Files.LineLength.TooLong" severity="5">Line exceeds 80 characters; contains 101 characters</warning>
+ </file>
+ <file name="/var/www/rueckgrat/src/Rueckgrat/Model/Entity.php" errors="8" warnings="2">
+  <error line="43" column="54" source="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine" severity="5">Opening brace should be on a new line</error>
+  <error line="48" column="32" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma" severity="5">No space found after comma in function call</error>
+  <error line="48" column="32" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma" severity="5">No space found after comma in function call</error>
+  <warning line="48" column="89" source="Generic.Files.LineLength.TooLong" severity="5">Line exceeds 80 characters; contains 88 characters</warning>
+  <warning line="49" column="86" source="Generic.Files.LineLength.TooLong" severity="5">Line exceeds 80 characters; contains 85 characters</warning>
+  <error line="54" column="13" source="Squiz.ControlStructures.ControlSignature" severity="5">Expected &quot;} else if (...) {\n&quot;; found &quot;}\n            else if (...) {\n&quot;</error>
+  <error line="55" column="17" source="Generic.ControlStructures.InlineControlStructure.NotAllowed" severity="5">Inline control structures are not allowed</error>
+  <error line="101" column="13" source="Squiz.ControlStructures.ControlSignature" severity="5">Expected &quot;if (...) {\n&quot;; found &quot;if (...)\n            {\n&quot;</error>
+  <error line="103" column="17" source="Squiz.ControlStructures.ControlSignature" severity="5">Expected &quot;foreach (...) {\n&quot;; found &quot;foreach(...) {\n&quot;</error>
+  <error line="110" column="13" source="Squiz.ControlStructures.ControlSignature" severity="5">Expected &quot;} else {\n&quot;; found &quot;}\n            else {\n&quot;</error>
+ </file>
+ <file name="/var/www/rueckgrat/src/Rueckgrat/Model/Repository.php" errors="46" warnings="11">
+  <error line="65" column="39" source="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine" severity="5">Opening brace should be on a new line</error>
+  <error line="73" column="52" source="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine" severity="5">Opening brace should be on a new line</error>
+  <warning line="90" column="99" source="Generic.Files.LineLength.TooLong" severity="5">Line exceeds 80 characters; contains 98 characters</warning>
+  <error line="94" column="9" source="Squiz.ControlStructures.ControlSignature" severity="5">Expected &quot;if (...) {\n&quot;; found &quot;if (...)\n        {\n&quot;</error>
+  <warning line="96" column="85" source="Generic.Files.LineLength.TooLong" severity="5">Line exceeds 80 characters; contains 84 characters</warning>
+  <error line="100" column="13" source="Squiz.ControlStructures.ControlSignature" severity="5">Expected &quot;if (...) {\n&quot;; found &quot;if (...)\n            {\n&quot;</error>
+  <error line="102" column="17" source="Squiz.ControlStructures.ControlSignature" severity="5">Expected &quot;foreach (...) {\n&quot;; found &quot;foreach (...)\n                {\n&quot;</error>
+  <error line="110" column="14" source="Squiz.ControlStructures.ControlSignature" severity="5">Expected &quot;if (...) {\n&quot;; found &quot;if (...)\n        {\n&quot;</error>
+  <warning line="110" column="115" source="Generic.Files.LineLength.TooLong" severity="5">Line exceeds 80 characters; contains 114 characters</warning>
+  <warning line="112" column="101" source="Generic.Files.LineLength.TooLong" severity="5">Line exceeds 80 characters; contains 100 characters</warning>
+  <error line="116" column="13" source="Squiz.ControlStructures.ControlSignature" severity="5">Expected &quot;if (...) {\n&quot;; found &quot;if (...)\n            {\n&quot;</error>
+  <error line="118" column="17" source="Squiz.ControlStructures.ControlSignature" severity="5">Expected &quot;foreach (...) {\n&quot;; found &quot;foreach (...)\n                {\n&quot;</error>
+  <error line="125" column="9" source="Squiz.ControlStructures.ControlSignature" severity="5">Expected &quot;} else if (...) {\n&quot;; found &quot;}\n        else if (...) {\n&quot;</error>
+  <warning line="125" column="98" source="Generic.Files.LineLength.TooLong" severity="5">Line exceeds 80 characters; contains 97 characters</warning>
+  <warning line="126" column="91" source="Generic.Files.LineLength.TooLong" severity="5">Line exceeds 80 characters; contains 90 characters</warning>
+  <error line="131" column="53" source="Generic.NamingConventions.UpperCaseConstantName.ConstantNotUpperCase" severity="5">Constants must be uppercase; expected TABLE but found table</error>
+  <error line="131" column="132" source="Generic.Files.LineLength.MaxExceeded" severity="5">Line exceeds maximum limit of 120 characters; contains 131 characters</error>
+  <error line="133" column="13" source="Squiz.ControlStructures.ControlSignature" severity="5">Expected &quot;} else {\n&quot;; found &quot;}\n            else {\n&quot;</error>
+  <error line="152" column="43" source="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine" severity="5">Opening brace should be on a new line</error>
+  <warning line="156" column="121" source="Generic.Files.LineLength.TooLong" severity="5">Line exceeds 80 characters; contains 120 characters</warning>
+  <error line="157" column="130" source="Generic.Files.LineLength.MaxExceeded" severity="5">Line exceeds maximum limit of 120 characters; contains 129 characters</error>
+  <error line="159" column="9" source="Squiz.ControlStructures.ControlSignature" severity="5">Expected &quot;try {\n...} catch (...) {\n&quot;; found &quot;try {\n...}\n        catch (...){\n&quot;</error>
+  <error line="186" column="42" source="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine" severity="5">Opening brace should be on a new line</error>
+  <error line="203" column="20" source="Generic.Functions.FunctionCallArgumentSpacing.SpaceBeforeComma" severity="5">Space found before comma in function call</error>
+  <error line="203" column="20" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma" severity="5">No space found after comma in function call</error>
+  <error line="203" column="20" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma" severity="5">No space found after comma in function call</error>
+  <warning line="204" column="121" source="Generic.Files.LineLength.TooLong" severity="5">Line exceeds 80 characters; contains 120 characters</warning>
+  <error line="205" column="130" source="Generic.Files.LineLength.MaxExceeded" severity="5">Line exceeds maximum limit of 120 characters; contains 129 characters</error>
+  <error line="207" column="9" source="Squiz.ControlStructures.ControlSignature" severity="5">Expected &quot;try {\n...} catch (...) {\n&quot;; found &quot;try {\n...}\n        catch (...){\n&quot;</error>
+  <error line="233" column="9" source="Squiz.ControlStructures.ControlSignature" severity="5">Expected &quot;if (...) {\n&quot;; found &quot;if (...)\n        {\n&quot;</error>
+  <error line="238" column="9" source="Squiz.ControlStructures.ControlSignature" severity="5">Expected &quot;} else {\n&quot;; found &quot;}\n        else\n        {\n&quot;</error>
+  <warning line="240" column="110" source="Generic.Files.LineLength.TooLong" severity="5">Line exceeds 80 characters; contains 109 characters</warning>
+  <warning line="243" column="98" source="Generic.Files.LineLength.TooLong" severity="5">Line exceeds 80 characters; contains 97 characters</warning>
+  <error line="245" column="9" source="Squiz.ControlStructures.ControlSignature" severity="5">Expected &quot;foreach (...) {\n&quot;; found &quot;foreach (...)\n        {\n&quot;</error>
+  <error line="248" column="13" source="Squiz.ControlStructures.ControlSignature" severity="5">Expected &quot;foreach (...) {\n&quot;; found &quot;foreach (...)\n            {\n&quot;</error>
+  <error line="250" column="17" source="Squiz.ControlStructures.ControlSignature" severity="5">Expected &quot;if (...) {\n&quot;; found &quot;if (...)\n                {\n&quot;</error>
+  <error line="254" column="21" source="Squiz.ControlStructures.ControlSignature" severity="5">Expected &quot;if (...) {\n&quot;; found &quot;if (...)\n                    {\n&quot;</error>
+  <error line="256" column="25" source="Squiz.ControlStructures.ControlSignature" severity="5">Expected &quot;foreach (...) {\n&quot;; found &quot;foreach (...)\n                        {\n&quot;</error>
+  <error line="261" column="21" source="Squiz.ControlStructures.ControlSignature" severity="5">Expected &quot;} else {\n&quot;; found &quot;}\n                    else\n                    {\n&quot;</error>
+  <error line="283" column="69" source="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine" severity="5">Opening brace should be on a new line</error>
+  <error line="293" column="56" source="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine" severity="5">Opening brace should be on a new line</error>
+  <error line="295" column="1" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 8 spaces, found 0</error>
+  <error line="296" column="1" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 8 spaces, found 0</error>
+  <error line="297" column="1" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 8 spaces, found 0</error>
+  <error line="299" column="134" source="Generic.Files.LineLength.MaxExceeded" severity="5">Line exceeds maximum limit of 120 characters; contains 133 characters</error>
+  <error line="306" column="20" source="Generic.Functions.FunctionCallArgumentSpacing.SpaceBeforeComma" severity="5">Space found before comma in function call</error>
+  <error line="306" column="20" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma" severity="5">No space found after comma in function call</error>
+  <error line="306" column="20" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma" severity="5">No space found after comma in function call</error>
+  <error line="323" column="131" source="Generic.Files.LineLength.MaxExceeded" severity="5">Line exceeds maximum limit of 120 characters; contains 130 characters</error>
+  <warning line="325" column="109" source="Generic.Files.LineLength.TooLong" severity="5">Line exceeds 80 characters; contains 108 characters</warning>
+  <error line="338" column="1" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 8 spaces, found 0</error>
+  <error line="339" column="1" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 8 spaces, found 0</error>
+  <error line="340" column="1" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 8 spaces, found 0</error>
+  <error line="341" column="1" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 8 spaces, found 0</error>
+  <error line="342" column="1" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 8 spaces, found 0</error>
+  <error line="343" column="1" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 8 spaces, found 0</error>
+  <error line="344" column="1" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 8 spaces, found 0</error>
+ </file>
+ <file name="/var/www/rueckgrat/src/Rueckgrat/Service/Mailer/Mailer.php" errors="7" warnings="2">
+  <error line="6" column="96" source="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine" severity="5">Opening brace should be on a new line</error>
+  <warning line="6" column="97" source="Generic.Files.LineLength.TooLong" severity="5">Line exceeds 80 characters; contains 96 characters</warning>
+  <error line="14" column="9" source="Squiz.ControlStructures.ControlSignature" severity="5">Expected &quot;} else {\n&quot;; found &quot;}\n        else {\n&quot;</error>
+  <error line="23" column="39" source="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine" severity="5">Opening brace should be on a new line</error>
+  <error line="25" column="1" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 8 spaces, found 0</error>
+  <error line="26" column="1" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 8 spaces, found 0</error>
+  <error line="27" column="1" source="Generic.WhiteSpace.ScopeIndent.Incorrect" severity="5">Line indented incorrectly; expected at least 8 spaces, found 0</error>
+  <error line="28" column="44" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma" severity="5">No space found after comma in function call</error>
+  <warning line="28" column="90" source="Generic.Files.LineLength.TooLong" severity="5">Line exceeds 80 characters; contains 89 characters</warning>
+ </file>
+ <file name="/var/www/rueckgrat/src/Rueckgrat/Validator/Validator.php" errors="1" warnings="0">
+  <error line="7" column="1" source="Zend.Files.ClosingTag.NotAllowed" severity="5">A closing tag is not permitted at the end of a PHP file</error>
+ </file>
+ <file name="/var/www/rueckgrat/src/Rueckgrat/View/View.php" errors="7" warnings="1">
+  <error line="18" column="137" source="Generic.Files.LineLength.MaxExceeded" severity="5">Line exceeds maximum limit of 120 characters; contains 136 characters</error>
+  <error line="23" column="40" source="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine" severity="5">Opening brace should be on a new line</error>
+  <error line="29" column="35" source="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine" severity="5">Opening brace should be on a new line</error>
+  <error line="35" column="32" source="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine" severity="5">Opening brace should be on a new line</error>
+  <error line="39" column="135" source="Generic.Files.LineLength.MaxExceeded" severity="5">Line exceeds maximum limit of 120 characters; contains 134 characters</error>
+  <error line="45" column="30" source="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine" severity="5">Opening brace should be on a new line</error>
+  <warning line="55" column="83" source="Generic.Files.LineLength.TooLong" severity="5">Line exceeds 80 characters; contains 82 characters</warning>
+  <error line="59" column="9" source="Generic.ControlStructures.InlineControlStructure.NotAllowed" severity="5">Inline control structures are not allowed</error>
+ </file>
+</phpcs>
