@@ -6,7 +6,6 @@
   <delete dir="${basedir}/../doc"/>
   <delete dir="${basedir}/logs"/>
   <delete dir="${basedir}/testresults"/>
-  <mkdir dir="${basedir}/../doc"/>
   <mkdir dir="${basedir}/logs"/>
   <mkdir dir="${basedir}/testresults"/>
  </target>
