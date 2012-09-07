@@ -119,10 +119,10 @@ class Bootloader
 
         $queryString = array();
 
-	if (!isset($url)) {
+        if (!isset($url)) {
             $controller = $default['controller'];
             $action = $default['action'];
-	} else {
+        } else {
             $url = str_replace('redirect:/public/index.php/', '', $url);
             $url = $this->routeURL($url);
             $urlArray = array();
@@ -136,11 +136,11 @@ class Bootloader
                 $action = 'index'; // Default Action
             }
             $queryString = $urlArray;
-	}
-	$controllerName = ucfirst($controller);
+        }
+        $controllerName = ucfirst($controller);
         $controller = '\\' . $this->config['general.namespace'] . '\\Controller\\' . $controllerName;
-	$dispatch = new $controller($action, $this->pimple);
-	if ((int) method_exists($controller, $action)) {
+        $dispatch = new $controller($action, $this->pimple);
+        if ((int) method_exists($controller, $action)) {
             call_user_func_array(array($dispatch, "beforeAction"), $queryString);
             call_user_func_array(array($dispatch, $action), $queryString);
             call_user_func_array(array($dispatch, "afterAction"), $queryString);
