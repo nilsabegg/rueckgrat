@@ -17,13 +17,13 @@ class DependencyInjectionContainer extends \Pimple
         }
         $this['config'] = $newConfig;
         $this['view.rootPath'] = 'index/index';
-        $this['view'] =  function ($c) {
-            return new View($c['view.rootPath'], $c['config']);
+        $this['view'] =  function ($config) {
+            return new View($config['view.rootPath'], $config['config']);
         };
 
-        $this['databaseHandler'] = $this->share(function ($c) {
-            $dsn = 'mysql:host=' . $c['config']['database.host'] . ';dbname=' . $c['config']['database.database'];
-            return new \PDO($dsn, $c['config']['database.username'], $c['config']['database.password']);
+        $this['databaseHandler'] = $this->share(function ($config) {
+            $dsn = 'mysql:host=' . $config['config']['database.host'] . ';dbname=' . $config['config']['database.database'];
+            return new \PDO($dsn, $config['config']['database.username'], $config['config']['database.password']);
         });
 
     }
