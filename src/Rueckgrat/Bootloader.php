@@ -22,7 +22,8 @@ class Bootloader
         $this->pimple = $pimple;
         $this->config = $pimple['config'];
         $this->setReporting();
-        $appLoader = new Autoloader($this->config['general.namespace'], __DIR__ . '/../../../../../src');
+        $appDir = __DIR__ . '/../../../../../src';
+        $appLoader = new Autoloader($this->config['general.namespace'], $appDir);
         $appLoader->register();
 
     }
@@ -54,7 +55,11 @@ class Bootloader
     protected function stripSlashesDeep($value)
     {
 
-        $value = is_array($value) ? array_map('stripSlashesDeep', $value) : stripslashes($value);
+        if (is_array($value)) {
+            $value = array_map('stripSlashesDeep', $value);
+        } else {
+            $value = stripslashes($value);
+        }
 
         return $value;
 
@@ -64,7 +69,16 @@ class Bootloader
     {
 
         if (ini_get('register_globals')) {
-            $array = array('_SESSION', '_POST', '_GET', '_COOKIE', '_REQUEST', '_SERVER', '_ENV', '_FILES');
+            $array = array(
+                '_SESSION',
+                '_POST',
+                '_GET',
+                '_COOKIE',
+                '_REQUEST',
+                '_SERVER',
+                '_ENV',
+                '_FILES'
+            );
             foreach ($array as $value) {
                 $this->unregisterGlobal($value);
             }
@@ -123,9 +137,8 @@ class Bootloader
             $controller = $default['controller'];
             $action = $default['action'];
         } else {
-            $url = str_replace('redirect:/public/index.php/', '', $url);
+            //$url = str_replace('redirect:/public/index.php/', '', $url);
             $url = $this->routeURL($url);
-            $urlArray = array();
             $urlArray = explode("/", $url);
             $controller = $urlArray[0];
             array_shift($urlArray);
