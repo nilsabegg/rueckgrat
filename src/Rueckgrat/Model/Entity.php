@@ -14,14 +14,20 @@ abstract class Entity
      * @var mixed
      */
     protected $values = array();
+
+    /**
+     * relations
+     *
+     *
+     * @var mixed
+     */
     protected $relations = array();
+
     /**
      * constructor
      *
      * @access public
-     * @param mixed $idOrColumnOrQuery
-     * @param mixed $value
-     * @throws \Exception
+     * @param mixed $repository
      */
     public function __construct(Repository $repository)
     {
@@ -40,12 +46,14 @@ abstract class Entity
      * @param mixed $values
      * @return mixed
      */
-    public function __call($getterOrSetter, $values) {
+    public function __call($getterOrSetter, $values)
+    {
+
         $columnName = substr($getterOrSetter, 3);
         $relationName = $this->isRelation($columnName);
         // is a column of the table
         if ($relationName == false) {
-            $columnNameParts = preg_replace('/([a-z0-9])?([A-Z])/','$1 $2',$columnName);
+            $columnNameParts = preg_replace('/([a-z0-9])?([A-Z])/', '$1 $2', $columnName);
             $column = substr(strtolower(str_replace(' ', '_', $columnNameParts)), 1);
             $column = ':' . str_replace(':', '', $column);
             if (substr($getterOrSetter, 0, 3) == 'set') {
@@ -55,15 +63,14 @@ abstract class Entity
                 if (isset($this->values[$column]) == true)
                 return utf8_decode($this->values[$column]);
             }
-        }
-        // is a related table
-        else {
+        } else {
             if (substr($getterOrSetter, 0, 3) == 'get') {
                 $methodName = 'get' . $relationName;
                 $entities = $this->repository->$methodName($this);
                 return $entities;
             }
         }
+
     }
 
     /**
@@ -76,7 +83,9 @@ abstract class Entity
      */
     public function getColumns()
     {
+
         return $this->columns;
+
     }
 
     /**
@@ -89,25 +98,48 @@ abstract class Entity
      */
     public function getValues()
     {
+
         return $this->values;
+
     }
+
+    /**
+     * setValues
+     *
+     *
+     *
+     * @access public
+     * @param mixed $values
+     * @return void
+     */
     public function setValues($values)
     {
+
         $this->values = $values;
+
     }
+
+    /**
+     * isRelation
+     *
+     *
+     *
+     * @access protected
+     * @param string $column
+     * @return mixed
+     */
     protected function isRelation($column)
     {
+
         foreach ($this->relations as $relation) {
-            if (is_array($relation))
-            {
+            if (is_array($relation)) {
                 foreach($relation as $relationSpellings) {
                     if ($relationSpellings == $column) {
 
                         return $relationSpellings;
                     }
                 }
-            }
-            else {
+            } else {
                 if ($relation == $column) {
 
                     return $relation;
@@ -116,5 +148,6 @@ abstract class Entity
         }
 
         return false;
+
     }
 }

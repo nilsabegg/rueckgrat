@@ -14,8 +14,24 @@ class Bootloader
     */
     protected $config = null;
 
+    /**
+     * pimple
+     *
+     *
+     *
+     * @var \Pimple
+     */
     protected $pimple = null;
 
+    /**
+     * __construct
+     *
+     *
+     *
+     * @access public
+     * @param \Pimple $pimple
+     * @return void
+     */
     public function __construct(\Pimple $pimple)
     {
 
@@ -35,7 +51,8 @@ class Bootloader
      * according to your defined debug status in the
      * config.ini
      *
-     * @return
+     * @access public
+     * @return void
      */
     public function setReporting()
     {
@@ -97,20 +114,6 @@ class Bootloader
 
     }
 
-    /** Secondary Call Function **/
-
-    public function performAction($controller, $action, $queryString = null, $render = 0)
-    {
-
-            $controllerName = ucfirst($controller).'Controller';
-            $dispatch = new $controllerName($action, $config);
-            $dispatch->render = $render;
-
-            return call_user_func_array(array($dispatch, $action), $queryString);
-
-    }
-
-
     protected function routeURL($url)
     {
 
@@ -163,14 +166,24 @@ class Bootloader
 
     }
 
-    protected function unregisterGlobal($value)
+    /**
+     * unregisterGlobal
+     *
+     *
+     *
+     * @access protected
+     * @param string $type
+     * @return void
+     */
+    protected function unregisterGlobal($type)
     {
 
-        foreach ($GLOBALS[$value] as $key => $var) {
+        foreach ($GLOBALS[$type] as $key => $var) {
             if ($var === $GLOBALS[$key]) {
                 unset($GLOBALS[$key]);
             }
         }
 
     }
+
 }
