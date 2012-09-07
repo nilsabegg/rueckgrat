@@ -53,15 +53,17 @@ abstract class Entity
         $relationName = $this->isRelation($columnName);
         // is a column of the table
         if ($relationName == false) {
-            $columnNameParts = preg_replace('/([a-z0-9])?([A-Z])/', '$1 $2', $columnName);
-            $column = substr(strtolower(str_replace(' ', '_', $columnNameParts)), 1);
-            $column = ':' . str_replace(':', '', $column);
+            $regEx = '/([a-z0-9])?([A-Z])/';
+            $columnNameParts = preg_replace($regEx, '$1 $2', $columnName);
+            $columnNameUppercase = str_replace(' ', '_', $columnNameParts);
+            $column = substr(strtolower($columnNameUppercase), 1);
+            $columnName = ':' . str_replace(':', '', $column);
             if (substr($getterOrSetter, 0, 3) == 'set') {
-                $this->values[$column] = $values[0];
-            }
-            else if (substr($getterOrSetter, 0, 3) == 'get') {
-                if (isset($this->values[$column]) == true)
-                return utf8_decode($this->values[$column]);
+                $this->values[$columnName] = $values[0];
+            } elseif (substr($getterOrSetter, 0, 3) == 'get') {
+                if (isset($this->values[$columnName]) == true) {
+                    return utf8_decode($this->values[$columnName]);
+                }
             }
         } else {
             if (substr($getterOrSetter, 0, 3) == 'get') {
@@ -133,7 +135,7 @@ abstract class Entity
 
         foreach ($this->relations as $relation) {
             if (is_array($relation)) {
-                foreach($relation as $relationSpellings) {
+                foreach ($relation as $relationSpellings) {
                     if ($relationSpellings == $column) {
 
                         return $relationSpellings;
