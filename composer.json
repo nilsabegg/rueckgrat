@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
     "name": "ffuf/rueckgrat",
     "type": "framework",
     "description": "A really bad MVC Framework.",
@@ -25,11 +24,5 @@
         "psr-0": {
             "Rueckgrat": "src"
         }
-=======
-    "require": {
-        "pimple/pimple": "dev-master",
-        "ezyang/htmlpurifier": "dev-master",
-        "rych/phpass": "2.0.1"
->>>>>>> 8e9bf997c39a3908357cca1cd04be07a126f5d7f
     }
 }
