@@ -55,7 +55,7 @@ abstract class Controller
 
         protected $user = null;
 
-        protected $databaseHandler = null;
+        protected $entityManager = null;
         protected $pimple = null;
         /**
          *
@@ -70,7 +70,7 @@ abstract class Controller
             $this->config = $this->pimple['config'];
             $this->action = $action;
             $this->createTemplate();
-            $this->databaseHandler = $this->pimple['databaseHandler'];
+            $this->entityManager = $this->pimple['entityManager'];
             if ($this->secured == true && isset($_SESSION['id']) == false)
             {
                 $this->redirect('user/login');

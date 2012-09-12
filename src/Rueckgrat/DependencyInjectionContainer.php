@@ -7,7 +7,9 @@ use Rueckgrat\View\View as View;
 class DependencyInjectionContainer extends \Pimple
 {
 
-    public function __construct($config) {
+    public function __construct($config)
+    {
+
         $newConfig = array();
         foreach ($config as $configSection => $configParameters) {
             $prefix = $configSection;
@@ -21,9 +23,9 @@ class DependencyInjectionContainer extends \Pimple
             return new View($config['view.rootPath'], $config['config']);
         };
 
-        $this['databaseHandler'] = $this->share(function ($config) {
-            $dsn = 'mysql:host=' . $config['config']['database.host'] . ';dbname=' . $config['config']['database.database'];
-            return new \PDO($dsn, $config['config']['database.username'], $config['config']['database.password']);
+        $this['entityManager'] = $this->share(function () {
+            $database = new Database($this);
+            return $database->getEntityManager();
         });
 
     }
