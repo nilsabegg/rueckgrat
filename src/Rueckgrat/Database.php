@@ -108,7 +108,7 @@ class Database
     {
 
         $this->doctrineConfig->setMetadataCacheImpl($this->cache);
-        $driverImpl = $this->doctrineConfig->newDefaultAnnotationDriver('/path/to/lib/MyProject/Entity');
+        $driverImpl = $this->doctrineConfig->newDefaultAnnotationDriver('/path/to/lib/' . $this->config['general']['namespace'] . '/Entity');
         $this->doctrineConfig->setMetadataDriverImpl($driverImpl);
         $this->doctrineConfig->setQueryCacheImpl($this->cache);
 
@@ -117,8 +117,8 @@ class Database
     protected function setupProxies()
     {
 
-        $this->doctrineConfig->setProxyDir('/path/to/myproject/lib/MyProject/Proxy');
-        $this->doctrineConfig->setProxyNamespace($this->config['general']['development'] . '\Model\Proxy');
+        $this->doctrineConfig->setProxyDir('/path/to/myproject/lib/' . $this->config['general']['namespace'] . '/Proxy');
+        $this->doctrineConfig->setProxyNamespace($this->config['general']['namespace'] . '\Model\Proxy');
         if ($this->config['general']['development'] == true) {
             $this->doctrineConfig->setAutoGenerateProxyClasses(true);
         } else {
