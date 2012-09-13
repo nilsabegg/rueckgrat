@@ -25,8 +25,8 @@ class DependencyInjectionContainer extends \Pimple
         $pimple = $this;
         $this['entityManager'] = $this->share(function($config) {
             $database = new Database($config['config']);
-
-            return $database->getEntityManager();
+            $entityManager = $database->getEntityManager();
+            return $entityManager;
         });
 
     }

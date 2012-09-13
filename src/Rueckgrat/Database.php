@@ -69,6 +69,7 @@ class Database
     public function getEntityManager()
     {
 
+        return $this->entityManager();
         if ($this->entityManager != null) {
             return $this->entityManager;
         } else {
