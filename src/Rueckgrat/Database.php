@@ -63,13 +63,13 @@ class Database
         } else {
             $this->cache = new \Doctrine\Common\Cache\ApcCache;
         }
-
+        $this->setup();
     }
 
     public function getEntityManager()
     {
 
-        return $this->entityManager();
+        return $this->entityManager;
         if ($this->entityManager != null) {
             return $this->entityManager;
         } else {
