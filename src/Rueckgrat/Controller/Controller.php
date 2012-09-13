@@ -79,7 +79,8 @@ abstract class Controller
             $this->user = $this->userRepository->create(intval($_SESSION['id']));
         }
         if ($this->hasModel !== false) {
-            $repositoryName = '\\' . $this->config['general.namespace'] . '\\Model\\Repository\\' . $this->getControllerName($this);
+            $namespace = '\\' . $this->config['general.namespace'] . '\\Model\\Repository\\';
+            $repositoryName = $namespace . $this->getControllerName($this);
             $this->repository = new $repositoryName($this->pimple);
         }
         $this->rootUrl = $this->getRootUrl();
@@ -231,7 +232,8 @@ abstract class Controller
     protected function getControllerName(Controller $controller)
     {
         $controllerClassName = get_class($controller);
-        $fullControllerName = str_replace($this->config['general.namespace'] . '\\Controller\\', '', $controllerClassName);
+        $namespace = $this->config['general.namespace'];
+        $fullControllerName = str_replace($namespace . '\\Controller\\', '', $controllerClassName);
 
         return $fullControllerName;
     }
@@ -248,7 +250,6 @@ abstract class Controller
 
         $url = 'http://';
         $url .= $_SERVER['SERVER_NAME'] . '/';
-        $url .= $path;
         $url .= $name;
 
         return $url;
