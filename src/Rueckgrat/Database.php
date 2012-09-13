@@ -98,8 +98,7 @@ class Database
 
         $this->setupCaches();
         $this->setupProxies();
-        $entityManager = $this->createEntityManager();
-        $this->registerEntityManager($entityManager);
+        $this->createEntityManager();
 
     }
 
