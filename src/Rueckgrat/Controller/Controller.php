@@ -15,6 +15,7 @@ abstract class Controller
      *
      * Holds the name of the called action.
      *
+     * @access protected
      * @var type
      */
     protected $action = null;
@@ -24,6 +25,7 @@ abstract class Controller
      *
      * Holds the configuration values in an array.
      *
+     * @access protected
      * @var mixed
      */
     protected $config = null;
@@ -33,6 +35,7 @@ abstract class Controller
      *
      * Holds the Doctrine entity manager.
      *
+     * @access protected
      * @var
      */
     protected $entityManager = null;
@@ -43,6 +46,7 @@ abstract class Controller
      * Indiccates if the controller has a
      * related model.
      *
+     * @access protected
      * @var boolean
      */
     protected $hasModel = true;
@@ -53,6 +57,7 @@ abstract class Controller
      * Indicates if the controller perfoms actions
      * for authenticated users only.
      *
+     * @access protected
      * @var boolean
      */
     protected $isSecured = false;
@@ -62,10 +67,20 @@ abstract class Controller
      *
      * Holds the Pimple dependency injection container.
      *
+     * @access protected
      * @var \Pimple
      */
     protected $pimple = null;
 
+    /**
+     * rootUrl
+     *
+     * Holds the root URL of the application.
+     *
+     * @access protected
+     * @var string
+     */
+    protected $rootUrl = null;
 
     /**
      * template
@@ -75,6 +90,7 @@ abstract class Controller
      * want to use the default page template in
      * 'app/view/index.php'.
      *
+     * @access protected
      * @var View
      */
     protected $template = null;
@@ -83,6 +99,8 @@ abstract class Controller
      * user
      *
      * Holds the Doctrine entity of the current user.
+     *
+     * @access protected
      * @var Object
      */
     protected $user = null;
@@ -92,15 +110,23 @@ abstract class Controller
      *
      * Holds the view template for the page.
      *
+     * @access protected
      * @var View
      */
     protected $view = null;
 
     /**
+     * __construct
+     *
+     * Constructs the object.
+     *
+     * @access public
      *
      * @param string $controller
      * @param string $action
-     * @param mixed $config
+     * @param \Pimple $pimple
+     *
+     * @return void
      */
     public function __construct($action, $pimple)
     {
@@ -133,6 +159,7 @@ abstract class Controller
      * requested controller action. You need
      * to overwrite this in your controller.
      *
+     * @access public
      * @return void
      */
     public function afterAction()
@@ -147,6 +174,7 @@ abstract class Controller
      * requested controller action. You need
      * to overwrite this in your controller.
      *
+     * @access public
      * @return void
      */
     public function beforeAction()
@@ -159,6 +187,7 @@ abstract class Controller
      *
      * Creates the page template.
      *
+     * @access protected
      * @return void
      */
     protected function createTemplate()
@@ -173,6 +202,8 @@ abstract class Controller
      *
      * Renders the whole page template.
      *
+     * @access protected
+     * @param boolean $ajax
      * @return void
      */
     protected function renderPage($ajax = false)
@@ -254,15 +285,14 @@ abstract class Controller
      *
      * Returns a application internal URL.
      *
+     * @access protected
      * @param string $name
      * @return string
      */
     protected function getUrl($name = '')
     {
 
-        $url = 'http://';
-        $url .= $_SERVER['SERVER_NAME'] . '/';
-        $url .= $name;
+        $url = 'http://' . $_SERVER['SERVER_NAME'] . '/' . $name;
 
         return $url;
 
@@ -273,17 +303,16 @@ abstract class Controller
      *
      * Returns the root URL of the application.
      *
-     * @param string $name
+     * @access protected
      * @return string
      */
     protected function getRootUrl()
     {
 
-        $url = 'http://';
-        $url .= $_SERVER['SERVER_NAME'] . '/';
+        $url = $this->getUrl();
         $this->rootUrl = $url;
 
-        return $url;
+        return $this->rootUrl;
 
     }
 
@@ -292,6 +321,7 @@ abstract class Controller
      *
      * Sets a variable for the view Template
      *
+     * @access protected
      * @param string $name
      * @param mixed $value
      * @return void
