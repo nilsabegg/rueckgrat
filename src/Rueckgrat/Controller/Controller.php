@@ -122,7 +122,6 @@ abstract class Controller
      *
      * @access public
      *
-     * @param string $controller
      * @param string $action
      * @param \Pimple $pimple
      *
