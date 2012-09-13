@@ -53,11 +53,10 @@ class Database
      * @param  \Pimple $pimple
      * @return void
      */
-    public function __construct(\Pimple $pimple)
+    public function __construct($config)
     {
 
-        $this->pimple = $pimple;
-        $this->config = $this->pimple['config'];
+        $this->config = $config;
         $this->doctrineConfig = new DoctrineConfiguration();
         if ($this->config['general.development'] == true) {
             $this->cache = new \Doctrine\Common\Cache\ArrayCache;
