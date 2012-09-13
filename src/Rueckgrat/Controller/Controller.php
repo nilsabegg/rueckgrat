@@ -1,9 +1,9 @@
 <?php
 
 /**
- * @author  Nils Abegg <rueckgrat@nilsabegg.de>
- * @package Controller
+ * This file is part of the Rückgrat Framework
  */
+
 namespace Rueckgrat\Controller;
 
 use Rueckgrat\View\View as View;
@@ -14,7 +14,10 @@ use Rueckgrat\View\View as View;
  * This class is the blueprint for all the frontend controllers
  * of the application.
  *
+ * @author  Nils Abegg <rueckgrat@nilsabegg.de>
  * @version 0.1
+ * @package Rueckgrat
+ * @subpackage Controller
  * @category Controller
  */
 abstract class Controller
