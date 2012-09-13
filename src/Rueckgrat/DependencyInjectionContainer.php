@@ -6,7 +6,7 @@ use Rueckgrat\View\View as View;
 
 /**
  * DependencyInjectionContainer
- * 
+ *
  */
 class DependencyInjectionContainer extends \Pimple
 {
@@ -26,7 +26,6 @@ class DependencyInjectionContainer extends \Pimple
         $this['view'] =  function($config) {
             return new View($config['view.rootPath'], $config['config']);
         };
-        $pimple = $this;
         $this['entityManager'] = $this->share(function($config) {
             $database = new Database($config['config']);
             $entityManager = $database->getEntityManager();
