@@ -19,7 +19,8 @@ class View
     {
 
         $this->config = $config;
-        $this->viewRootPath = $this->config['general.appDir'] . 'src/' . $this->config['general.namespace'] . '/View/' . $viewRootPath . '.php';
+        $appPath = $this->config['general.appDir'] . 'src/' . $this->config['general.namespace'];
+        $this->viewRootPath = $appPath . '/View/' . $viewRootPath . '.php';
         $this->view = $viewRootPath;
 
     }
@@ -43,7 +44,8 @@ class View
 
         $html = '';
         foreach ($this->javascripts as $javascript) {
-            $html .= '<script src="http://' . $_SERVER['SERVER_NAME'] . '/js/'. $javascript . '.js" type="text/javascript"></script>';
+            $source = 'http://' . $_SERVER['SERVER_NAME'] . '/js/'. $javascript . '.js';
+            $html .= '<script src="' . $source . '" type="text/javascript"></script>';
         }
 
         return $html;
@@ -65,7 +67,9 @@ class View
         if (file_exists($cssFileName) == true) {
             $this->vars['viewCss'][] = $this->vars['viewFile'];
         }
-        if (!isset($this->vars['viewJs'])) $this->vars['viewJs'] = array();
+        if (isset($this->vars['viewJs']) == false) {
+            $this->vars['viewJs'] = array();
+        }
         if (file_exists(__DIR__ . 'public/js/'.$this->vars['viewFile'].'.js')) {
             $this->vars['viewJs'][] = $this->vars['viewFile'];
         }
