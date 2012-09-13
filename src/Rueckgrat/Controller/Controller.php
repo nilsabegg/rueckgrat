@@ -223,7 +223,6 @@ abstract class Controller
         {
 
             header('Location: ' . $this->getUrl($path));
-            exit;
 
         }
     /**
