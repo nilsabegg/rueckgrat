@@ -108,7 +108,7 @@ class Database
 
         $this->doctrineConfig->setMetadataCacheImpl($this->cache);
         $entityDir = $this->config['general.namespace'] . '/Model/Entity';
-        $entityPath = __DIR__ . $entityDir;
+        $entityPath = $this->config['general.appDir'] . 'src/' . $entityDir;
         $driverImpl = $this->doctrineConfig->newDefaultAnnotationDriver($entityPath);
         $this->doctrineConfig->setMetadataDriverImpl($driverImpl);
         $this->doctrineConfig->setQueryCacheImpl($this->cache);
@@ -119,7 +119,7 @@ class Database
     {
 
         $proxyDir = $this->config['general.namespace'] . '/Model/Proxy';
-        $proxyPath = __DIR__ . $proxyDir;
+        $proxyPath = $this->config['general.appDir'] . 'src/' . $proxyDir;
         $this->doctrineConfig->setProxyDir($proxyPath);
         $this->doctrineConfig->setProxyNamespace($this->config['general.namespace'] . '\Model\Proxy');
         if ($this->config['general.development'] == true) {

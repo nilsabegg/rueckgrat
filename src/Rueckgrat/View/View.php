@@ -22,18 +22,21 @@ class View
 
     public function set($name, $value)
     {
+
         $this->vars[$name] = $value;
 
     }
 
     public function setJs($value)
     {
+
         $this->javascripts[] = $value;
 
     }
 
     public function renderJs()
     {
+
         $html = '';
         foreach ($this->javascripts as $javascript) {
             $html .= '<script src="http://' . $_SERVER['SERVER_NAME'] . '/js/'. $javascript . '.js" type="text/javascript"></script>';
@@ -45,6 +48,7 @@ class View
 
     public function render()
     {
+        
         $jsPath = $this->config['general.appDir'] . 'public/js/' . $this->view . '.js';
         if (file_exists($jsPath) == true) {
             $this->setJs($this->view);
