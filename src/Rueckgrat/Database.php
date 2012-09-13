@@ -59,7 +59,7 @@ class Database
         $this->pimple = $pimple;
         $this->config = $this->pimple['config'];
         $this->doctrineConfig = new DoctrineConfiguration();
-        if ($this->config['general']['development'] == true) {
+        if ($this->config['general.development'] == true) {
             $this->cache = new \Doctrine\Common\Cache\ArrayCache;
         } else {
             $this->cache = new \Doctrine\Common\Cache\ApcCache;
@@ -83,11 +83,11 @@ class Database
 
         $connectionOptions = array(
             'driver'   => 'pdo_mysql',
-            'host'     => $this->config['database']['host'],
-            'port'     => $this->config['database']['port'],
-            'user'     => $this->config['database']['username'],
-            'password' => $this->config['database']['password'],
-            'dbname'   => $this->config['database']['database']
+            'host'     => $this->config['database.host'],
+            'port'     => $this->config['database.port'],
+            'user'     => $this->config['database.username'],
+            'password' => $this->config['database.password'],
+            'dbname'   => $this->config['database.database']
         );
         $this->entityManager = EntityManager::create($connectionOptions, $this->doctrineConfig);
 
@@ -107,7 +107,7 @@ class Database
     {
 
         $this->doctrineConfig->setMetadataCacheImpl($this->cache);
-        $entityDir = $this->config['general']['namespace'] . '/Model/Entity';
+        $entityDir = $this->config['general.namespace'] . '/Model/Entity';
         $entityPath = __DIR__ . $entityDir;
         $driverImpl = $this->doctrineConfig->newDefaultAnnotationDriver($entityPath);
         $this->doctrineConfig->setMetadataDriverImpl($driverImpl);
@@ -118,11 +118,11 @@ class Database
     protected function setupProxies()
     {
 
-        $proxyDir = $this->config['general']['namespace'] . '/Model/Proxy';
+        $proxyDir = $this->config['general.namespace'] . '/Model/Proxy';
         $proxyPath = __DIR__ . $proxyDir;
         $this->doctrineConfig->setProxyDir($proxyPath);
-        $this->doctrineConfig->setProxyNamespace($this->config['general']['namespace'] . '\Model\Proxy');
-        if ($this->config['general']['development'] == true) {
+        $this->doctrineConfig->setProxyNamespace($this->config['general.namespace'] . '\Model\Proxy');
+        if ($this->config['general.development'] == true) {
             $this->doctrineConfig->setAutoGenerateProxyClasses(true);
         } else {
             $this->doctrineConfig->setAutoGenerateProxyClasses(false);
