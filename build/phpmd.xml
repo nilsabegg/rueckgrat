@@ -7,7 +7,7 @@
          xsi:noNamespaceSchemaLocation="
                      http://pmd.sf.net/ruleset_xml_schema.xsd">
     <description>
-        My custom rule set that checks my code...
+        A custom rule set for FFUF
     </description>
 
     <!-- Import the entire unused code rule set -->
@@ -21,6 +21,8 @@
 
     <!-- Import entire naming rule set and exclude rules -->
     <rule ref="rulesets/design.xml" />
+
     <!-- Import entire naming rule set and exclude rules -->
     <rule ref="rulesets/naming.xml" />
+
 </ruleset>
