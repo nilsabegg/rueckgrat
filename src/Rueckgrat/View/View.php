@@ -5,11 +5,15 @@ namespace Rueckgrat\View;
 class View
 {
 
-    protected $vars = array();
     protected $file = null;
-    protected $viewRootPath = null;
+
     protected $javascripts = array();
+
+    protected $vars = array();
+
     protected $view = null;
+
+    protected $viewRootPath = null;
 
     public function __construct($viewRootPath, $config)
     {
@@ -48,7 +52,7 @@ class View
 
     public function render()
     {
-        
+
         $jsPath = $this->config['general.appDir'] . 'public/js/' . $this->view . '.js';
         if (file_exists($jsPath) == true) {
             $this->setJs($this->view);

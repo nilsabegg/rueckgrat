@@ -8,14 +8,14 @@ class Controller extends \Rueckgrat\Controller\Controller
 {
 
         /**
-         * secured
+         * isSecured
          *
          * Indicates if the controller perfoms actions
          * for authenticated users only.
          *
          * @var boolean
          */
-        protected $secured = true;
+        protected $isSecured = true;
 
         public function __construct($action, $pimple)
         {

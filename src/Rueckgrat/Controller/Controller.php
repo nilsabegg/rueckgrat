@@ -4,14 +4,68 @@ namespace Rueckgrat\Controller;
 
 use Rueckgrat\View\View as View;
 
+/**
+ * Controller
+ */
 abstract class Controller
 {
 
     /**
+     * action
+     *
+     * Holds the name of the called action.
      *
      * @var type
      */
     protected $action = null;
+
+    /**
+     * config
+     *
+     * Holds the configuration values in an array.
+     *
+     * @var mixed
+     */
+    protected $config = null;
+
+    /**
+     * entityManager
+     *
+     * Holds the Doctrine entity manager.
+     *
+     * @var
+     */
+    protected $entityManager = null;
+
+    /**
+     * hasModel
+     *
+     * Indiccates if the controller has a
+     * related model.
+     *
+     * @var boolean
+     */
+    protected $hasModel = true;
+
+    /**
+     * isSecured
+     *
+     * Indicates if the controller perfoms actions
+     * for authenticated users only.
+     *
+     * @var boolean
+     */
+    protected $isSecured = false;
+
+    /**
+     * pimple
+     *
+     * Holds the Pimple dependency injection container.
+     *
+     * @var \Pimple
+     */
+    protected $pimple = null;
+
 
     /**
      * template
@@ -26,6 +80,14 @@ abstract class Controller
     protected $template = null;
 
     /**
+     * user
+     *
+     * Holds the Doctrine entity of the current user.
+     * @var Object
+     */
+    protected $user = null;
+
+    /**
      * view
      *
      * Holds the view template for the page.
@@ -34,29 +96,6 @@ abstract class Controller
      */
     protected $view = null;
 
-    /**
-     * config
-     *
-     * Holds the configuration values in an array.
-     *
-     * @var mixed
-     */
-    protected $config = null;
-    protected $hasModel = true;
-    /**
-     * secured
-     *
-     * Indicates if the controller perfoms actions
-     * for authenticated users only.
-     *
-     * @var boolean
-     */
-    protected $secured = false;
-
-    protected $user = null;
-
-    protected $entityManager = null;
-    protected $pimple = null;
     /**
      *
      * @param string $controller
@@ -112,35 +151,6 @@ abstract class Controller
      */
     public function beforeAction()
     {
-
-    }
-
-    /**
-     * clean parameters
-     *
-     * @return void
-     */
-    protected function cleanParameters()
-    {
-
-        $config = \HTMLPurifier_Config::createDefault();
-        $purifier = new \HTMLPurifier($config);
-        foreach ($_GET as $key => $value) {
-            unset($_GET[$key]);
-            $_GET[$key] = $purifier->purify(strip_tags($value));
-        }
-        foreach ($_POST as $key => $value) {
-            if (is_array($value)) {
-                foreach ($value as $key2 => $value2) {
-                    unset($_POST[$key][$key2]);
-                    $_POST[$key][$key2] = $purifier->purify(strip_tags($value2));
-                }
-            } else {
-                unset($_POST[$key]);
-
-                $_POST[$key] = $purifier->purify(strip_tags($value));
-            }
-        }
 
     }
 
@@ -220,6 +230,7 @@ abstract class Controller
         header('Location: ' . $this->getUrl($path));
 
     }
+
     /**
      * get table name
      *
@@ -237,10 +248,11 @@ abstract class Controller
 
         return $fullControllerName;
     }
+
     /**
      * getUrl
      *
-     * Returns a framework internal url.
+     * Returns a application internal URL.
      *
      * @param string $name
      * @return string
@@ -256,6 +268,14 @@ abstract class Controller
 
     }
 
+    /**
+     * getRootUrl
+     *
+     * Returns the root URL of the application.
+     *
+     * @param string $name
+     * @return string
+     */
     protected function getRootUrl()
     {
 
@@ -266,6 +286,7 @@ abstract class Controller
         return $url;
 
     }
+
     /**
      * set
      *

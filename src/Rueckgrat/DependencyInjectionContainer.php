@@ -4,6 +4,10 @@ namespace Rueckgrat;
 
 use Rueckgrat\View\View as View;
 
+/**
+ * DependencyInjectionContainer
+ * 
+ */
 class DependencyInjectionContainer extends \Pimple
 {
 
