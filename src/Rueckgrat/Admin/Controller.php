@@ -1,18 +1,17 @@
 <?php
 
+/**
+ * Controller
+ *
+ * This class is the blueprint for all the backend controllers
+ * of the application.
+ *
+ * @author  Nils Abegg <rueckgrat@nilsabegg.de>
+ * @version 0.1
+ * @category Controller
+ * @package Admin
+ */
 namespace Rueckgrat\Admin;
-
- /**
-  * Controller
-  *
-  * This class is the blueprint for all the backend controllers
-  * of the application.
-  *
-  * @author  Nils Abegg <rueckgrat@nilsabegg.de>
-  * @version 0.1
-  * @category Controller
-  * @package Admin
-  */
 
 use Rueckgrat\View\View as View;
 

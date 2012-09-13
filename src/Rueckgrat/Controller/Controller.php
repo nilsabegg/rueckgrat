@@ -1,20 +1,20 @@
 <?php
 
+/**
+ * Controller
+ *
+ * This class is the blueprint for all the frontend controllers
+ * of the application.
+ *
+ * @author  Nils Abegg <rueckgrat@nilsabegg.de>
+ * @version 0.1
+ * @category Controller
+ * @package Controller
+ */
 namespace Rueckgrat\Controller;
 
 use Rueckgrat\View\View as View;
 
- /**
-  * Controller
-  *
-  * This class is the blueprint for all the frontend controllers
-  * of the application.
-  *
-  * @author  Nils Abegg <rueckgrat@nilsabegg.de>
-  * @version 0.1
-  * @category Controller
-  * @package Controller
-  */
 abstract class Controller
 {
 
