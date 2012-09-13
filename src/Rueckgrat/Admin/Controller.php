@@ -2,9 +2,21 @@
 
 namespace Rueckgrat\Admin;
 
+ /**
+  * Controller
+  *
+  * This class is the blueprint for all the backend controllers
+  * of the application.
+  *
+  * @author  Nils Abegg <rueckgrat@nilsabegg.de>
+  * @version 0.1
+  * @category Controller
+  * @package Admin
+  */
+
 use Rueckgrat\View\View as View;
 
-class Controller extends \Rueckgrat\Controller\Controller
+abstract class Controller extends \Rueckgrat\Controller\Controller
 {
 
     /**
@@ -13,10 +25,21 @@ class Controller extends \Rueckgrat\Controller\Controller
      * Indicates if the controller perfoms actions
      * for authenticated users only.
      *
+     * @access protected
      * @var boolean
      */
     protected $isSecured = true;
 
+    /**
+     * __construct
+     *
+     * Constructs the object.
+     *
+     * @access public
+     * @param type $action
+     * @param type $pimple
+     * @return void
+     */
     public function __construct($action, $pimple)
     {
         parent::__construct($action, $pimple);
@@ -26,8 +49,9 @@ class Controller extends \Rueckgrat\Controller\Controller
     /**
      * createNavigation
      *
-     * Creates the navigation bar for the admin section
+     * Creates the navigation bar for the admin section.
      *
+     * @access protected
      * @return void
      */
     protected function createNavigation()
@@ -43,6 +67,7 @@ class Controller extends \Rueckgrat\Controller\Controller
      *
      * Creates the page template.
      *
+     * @access protected
      * @return void
      */
     protected function createTemplate()
