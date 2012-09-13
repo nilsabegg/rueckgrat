@@ -19,7 +19,8 @@
         "pimple/pimple": "dev-master",
         "ezyang/htmlpurifier": "dev-master",
         "rych/phpass": "3.x-dev",
-        "doctrine/orm": "2.2.2"
+        "doctrine/orm": "2.2.2",
+        "symfony/console": "2.*"
     },
     "autoload": {
         "psr-0": {
