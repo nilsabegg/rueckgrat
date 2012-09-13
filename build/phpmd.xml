@@ -18,7 +18,7 @@
         customize the rule configuration.
     -->
     <rule ref="rulesets/codesize.xml" />
-    
+
     <!-- Import entire naming rule set and exclude rules -->
     <rule ref="rulesets/design.xml" />
     <!-- Import entire naming rule set and exclude rules -->

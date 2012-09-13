@@ -1,17 +1,17 @@
 <?php
 
+namespace Rueckgrat\Service\Mailer;
 
-class Mailer {
-
-    public function createEmail($subject, $message, $mailTo, $mailFrom = 'info@comesback.com') {
-
+class Mailer
+{
+    public function createEmail($subject, $message, $mailTo, $mailFrom = 'info@comesback.com')
+    {
         $email = \Swift_Message::newInstance();
         $email->setSubject($subject);
         $email->setFrom($mailFrom);
         if (is_array($mailTo) == true) {
             $email->setTo($mailTo);
-        }
-        else {
+        } else {
             $email->setTo(array($mailTo));
         }
         $email->setBody($message);
@@ -20,8 +20,8 @@ class Mailer {
 
     }
 
-    public function sendEmail($email) {
-
+    public function sendEmail($email)
+    {
 //        $transport = Swift_SmtpTransport::newInstance('smtp.ffuf.de', 25);
 //        $transport->setUsername('m023cb7b');
 //        $transport->setPassword('q8WFMYf8KpWWCYUb');

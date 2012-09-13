@@ -50,7 +50,7 @@ class Database
      *
      *
      * @access public
-     * @param \Pimple $pimple
+     * @param  \Pimple $pimple
      * @return void
      */
     public function __construct(\Pimple $pimple)

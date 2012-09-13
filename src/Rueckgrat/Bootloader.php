@@ -29,7 +29,7 @@ class Bootloader
      *
      *
      * @access public
-     * @param \Pimple $pimple
+     * @param  \Pimple $pimple
      * @return void
      */
     public function __construct(\Pimple $pimple)
@@ -172,7 +172,7 @@ class Bootloader
      *
      *
      * @access protected
-     * @param string $type
+     * @param  string $type
      * @return void
      */
     protected function unregisterGlobal($type)

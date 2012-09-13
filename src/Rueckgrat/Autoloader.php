@@ -117,7 +117,7 @@ class Autoloader
     /**
      * Loads the given class or interface.
      *
-     * @param string $className The name of the class to load.
+     * @param  string $className The name of the class to load.
      * @return void
      */
     public function loadClass($className)

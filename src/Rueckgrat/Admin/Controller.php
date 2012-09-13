@@ -17,7 +17,8 @@ class Controller extends \Rueckgrat\Controller\Controller
          */
         protected $secured = true;
 
-        public function __construct($action, $pimple) {
+        public function __construct($action, $pimple)
+        {
             parent::__construct($action, $pimple);
             $this->createNavigation();
         }

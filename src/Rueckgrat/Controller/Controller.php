@@ -11,7 +11,7 @@ abstract class Controller
          *
          * @var type
          */
-	protected $action = null;
+    protected $action = null;
 
         /**
          * template
@@ -23,7 +23,7 @@ abstract class Controller
          *
          * @var View
          */
-	protected $template = null;
+    protected $template = null;
 
         /**
          * view
@@ -63,7 +63,7 @@ abstract class Controller
          * @param string $action
          * @param mixed $config
          */
-	public function __construct($action, $pimple)
+    public function __construct($action, $pimple)
         {
 
             $this->pimple = $pimple;
@@ -71,12 +71,9 @@ abstract class Controller
             $this->action = $action;
             $this->createTemplate();
             $this->entityManager = $this->pimple['entityManager'];
-            if ($this->secured == true && isset($_SESSION['id']) == false)
-            {
+            if ($this->secured == true && isset($_SESSION['id']) == false) {
                 $this->redirect('user/login');
-            }
-            elseif (isset($_SESSION['id']) == true)
-            {
+            } elseif (isset($_SESSION['id']) == true) {
                 $repositoryName = '\\' . $this->config['general.namespace'] . '\\Model\\Repository\\User';
                 $this->userRepository = new $repositoryName($this->pimple);
                 $this->user = $this->userRepository->create(intval($_SESSION['id']));
@@ -87,7 +84,7 @@ abstract class Controller
             }
             $this->rootUrl = $this->getRootUrl();
 
-	}
+    }
 
         /**
          * afterAction
@@ -127,20 +124,17 @@ abstract class Controller
 
             $config = \HTMLPurifier_Config::createDefault();
             $purifier = new \HTMLPurifier($config);
-            foreach ($_GET as $key => $value)
-            {
+            foreach ($_GET as $key => $value) {
                 unset($_GET[$key]);
                 $_GET[$key] = $purifier->purify(strip_tags($value));
             }
-            foreach ($_POST as $key => $value)
-            {
+            foreach ($_POST as $key => $value) {
                 if (is_array($value)) {
                     foreach ($value as $key2 => $value2) {
                         unset($_POST[$key][$key2]);
                         $_POST[$key][$key2] = $purifier->purify(strip_tags($value2));
                     }
-                }
-                else {
+                } else {
                     unset($_POST[$key]);
 
                     $_POST[$key] = $purifier->purify(strip_tags($value));
@@ -172,13 +166,13 @@ abstract class Controller
          */
         protected function renderPage($ajax = false)
         {
+
             if ($ajax == false) {
                 $this->template->set('rootUrl', $this->rootUrl);
                 $this->template->set('content', $this->view->render());
                 $this->template->set('js', $this->view->renderJs());
                 echo $this->template->render();
-            }
-            else {
+            } else {
                 $this->template = $this->view;
                 $this->template->set('js', $this->view->renderJs());
 
@@ -231,13 +225,14 @@ abstract class Controller
      * Returns the name of an entity's table.
      *
      * @access protected
-     * @param Controller $controller
+     * @param  Controller $controller
      * @return string
      */
     protected function getControllerName(Controller $controller)
     {
         $controllerClassName = get_class($controller);
         $fullControllerName = str_replace($this->config['general.namespace'] . '\\Controller\\', '', $controllerClassName);
+
         return $fullControllerName;
     }
         /**
@@ -260,6 +255,7 @@ abstract class Controller
 //            $url .= $path;
 
             $url .= $name;
+
             return $url;
 
         }
@@ -274,6 +270,7 @@ abstract class Controller
 //            $path = str_replace('index.php', '', $_SERVER['PHP_SELF']);
 //            $url .= $path;
             $this->rootUrl = $url;
+
             return $url;
 
         }
@@ -286,12 +283,11 @@ abstract class Controller
          * @param mixed $value
          * @return void
          */
-	protected function set($name,$value)
+    protected function set($name,$value)
         {
 
             $this->view->set($name,$value);
 
-	}
-
+    }
 
 }
