@@ -17,4 +17,7 @@
     directory.
  -->
  <rule ref="PSR"/>
+ <rule ref="Generic.Files.LineLength.TooLong">
+     <exclude-pattern>*</exclude-pattern>
+ </rule>
 </ruleset>
