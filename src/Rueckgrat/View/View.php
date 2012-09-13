@@ -15,7 +15,7 @@ class View
     {
 
         $this->config = $config;
-        $this->viewRootPath = __DIR__ . '/../../../../../src/' . $this->config['general.namespace'] . '/View/' . $viewRootPath . '.php';
+        $this->viewRootPath = $this->config['general.appDir'] . 'src/' . $this->config['general.namespace'] . '/View/' . $viewRootPath . '.php';
         $this->view = $viewRootPath;
 
     }
@@ -45,7 +45,7 @@ class View
 
     public function render()
     {
-        $jsPath = __DIR__ . '/../../../../../public/js/' . $this->view . '.js';
+        $jsPath = $this->config['general.appDir'] . 'public/js/' . $this->view . '.js';
         if (file_exists($jsPath) == true) {
             $this->setJs($this->view);
         }
