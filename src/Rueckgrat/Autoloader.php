@@ -7,6 +7,8 @@
 namespace Rueckgrat;
 
 /**
+ * Autoloader
+ *
  * SplClassLoader implementation that implements the technical interoperability
  * standards for PHP 5.3 namespaces and class names.
  *
@@ -29,108 +31,204 @@ namespace Rueckgrat;
  */
 class Autoloader
 {
+
+    /**
+     * fileExtension
+     *
+     * Holds the extension of the file.
+     *
+     * @access protected
+     * @var string
+     */
     protected $fileExtension = '.php';
-    protected $namespace;
+
+    /**
+     * fileExtension
+     *
+     * Holds the path to autoload.
+     *
+     * @access protected
+     * @var string
+     */
     protected $includePath;
+
+    /**
+     * namespace
+     *
+     * Holds the namespace to autoload.
+     *
+     * @access protected
+     * @var string
+     */
+    protected $namespace;
+
+    /**
+     * namespaceSeparator
+     *
+     * Holds the namespace separator.
+     *
+     * @access protected
+     * @var string
+     */
     protected $namespaceSeparator = '\\';
 
     /**
+     * __construct
+     *
      * Creates a new <tt>SplClassLoader</tt> that loads classes of the
      * specified namespace.
      *
+     * @access public
      * @param string $namespace
+     * @param string $includePath
      * @return void
      */
     public function __construct($namespace = null, $includePath = null)
     {
+
         $this->namespace = $namespace;
         $this->includePath = $includePath;
+
     }
 
     /**
-     * Sets the namespace separator used by classes in the namespace of this class loader.
+     * setNamespaceSeparator
      *
-     * @param string $sep The separator to use.
+     * Sets the namespace separator used by classes in the
+     * namespace of this class loader.
+     *
+     * @access public
+     * @param string $separator
+     * @return void
      */
-    public function setNamespaceSeparator($sep)
+    public function setNamespaceSeparator($separator)
     {
-        $this->namespaceSeparator = $sep;
+
+        $this->namespaceSeparator = $separator;
+
     }
 
     /**
-     * Gets the namespace seperator used by classes in the namespace of this class loader.
+     * getNamespaceSeparator
      *
+     * Gets the namespace seperator used by classes in the namespace
+     * of this class loader.
+     *
+     * @access public
      * @return void
      */
     public function getNamespaceSeparator()
     {
+
         return $this->namespaceSeparator;
+
     }
 
     /**
-     * Sets the base include path for all class files in the namespace of this class loader.
+     * setIncludePath
      *
+     * Sets the base include path for all class files in the namespace
+     * of this class loader.
+     *
+     * @access public
      * @param string $includePath
+     * @return void
      */
     public function setIncludePath($includePath)
     {
+
         $this->includePath = $includePath;
+
     }
 
     /**
+     * getIncludePath
+     *
      * Gets the base include path for all class files in the namespace of this class loader.
      *
-     * @return string $includePath
+     * @access public
+     * @return void
      */
     public function getIncludePath()
     {
+
         return $this->includePath;
+
     }
 
     /**
+     * setFileExtension
+     *
      * Sets the file extension of class files in the namespace of this class loader.
      *
+     * @access public
      * @param string $fileExtension
+     * @return void
      */
     public function setFileExtension($fileExtension)
     {
+
         $this->fileExtension = $fileExtension;
+
     }
 
     /**
+     * getFilexExtension
+     *
      * Gets the file extension of class files in the namespace of this class loader.
      *
+     * @access public
      * @return string $fileExtension
      */
     public function getFileExtension()
     {
+
         return $this->fileExtension;
+
     }
 
     /**
+     * register
+     *
      * Installs this class loader on the SPL autoload stack.
+     *
+     * @access public
+     * @return void
      */
     public function register()
     {
+
         spl_autoload_register(array($this, 'loadClass'));
+
     }
 
     /**
+     * unregister
+     *
      * Uninstalls this class loader from the SPL autoloader stack.
+     *
+     * @access public
+     * @return void
      */
     public function unregister()
     {
+
         spl_autoload_unregister(array($this, 'loadClass'));
+
     }
 
     /**
+     * loadClass
+     *
      * Loads the given class or interface.
      *
+     * @access public
      * @param  string $className The name of the class to load.
      * @return void
      */
     public function loadClass($className)
     {
+
         if (null === $this->namespace || $this->namespace.$this->namespaceSeparator === substr($className, 0, strlen($this->namespace.$this->namespaceSeparator))) {
             $fileName = '';
             $namespace = '';
@@ -143,5 +241,7 @@ class Autoloader
 
             require ($this->includePath !== null ? $this->includePath . DIRECTORY_SEPARATOR : '') . $fileName;
         }
+
     }
+
 }

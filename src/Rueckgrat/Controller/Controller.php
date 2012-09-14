@@ -49,7 +49,7 @@ abstract class Controller
      * Holds the Doctrine entity manager.
      *
      * @access protected
-     * @var
+     * @var \Doctrine\ORM\EntityManager
      */
     protected $entityManager = null;
 
