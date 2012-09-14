@@ -24,24 +24,49 @@ class View
     /**
      * javascripts
      *
-     * Holds the names of the javascript files.
+     * Holds the names of the javascript files
+     * for the template.
      *
      * @access protected
      * @var mixed
      */
     protected $javascripts = array();
 
+    /**
+     * vars
+     *
+     * Holds the variables for the template.
+     *
+     * @access protected
+     * @var mixed
+     */
     protected $vars = array();
 
+    /**
+     * view
+     *
+     * Holds the name of the template.
+     *
+     * @access protected
+     * @var string
+     */
     protected $view = null;
 
+    /**
+     * viewRootPath
+     *
+     * Holds the path to the template.
+     *
+     * @access protected
+     * @var string
+     */
     protected $viewRootPath = null;
 
     /**
      * __construct
      *
      * Constructs the object.
-     * 
+     *
      * @param string $viewRootPath
      * @param mixed $config
      * return void
@@ -56,6 +81,16 @@ class View
 
     }
 
+    /**
+     * set
+     *
+     * Sets a variable for the template.
+     *
+     * @access protected
+     * @param string $name
+     * @param mixed $value
+     * @return void
+     */
     public function set($name, $value)
     {
 
@@ -63,6 +98,15 @@ class View
 
     }
 
+    /**
+     * set
+     *
+     * Sets a name of a Javascript file for the template.
+     *
+     * @access protected
+     * @param string $value
+     * @return void
+     */
     public function setJs($value)
     {
 
@@ -107,13 +151,6 @@ class View
             $this->setJs($this->view);
         }
         $this->vars['viewFile'] = basename($_SERVER['PHP_SELF'], '.php');
-        if (isset($this->vars['viewCss']) == false) {
-            $this->vars['viewCss'] = array();
-        }
-        $cssFileName = __DIR__ . 'public/css/' . $this->vars['viewFile'] . '.css';
-        if (file_exists($cssFileName) == true) {
-            $this->vars['viewCss'][] = $this->vars['viewFile'];
-        }
         if (isset($this->vars['viewJs']) == false) {
             $this->vars['viewJs'] = array();
         }

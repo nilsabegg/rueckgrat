@@ -17,7 +17,7 @@ use Rueckgrat\View\View as View;
  * @author  Nils Abegg <rueckgrat@nilsabegg.de>
  * @version 0.1
  * @package Rueckgrat
- * @subpackage Adminxs
+ * @subpackage Admin
  * @category Controller
  */
 abstract class Controller extends \Rueckgrat\Controller\Controller
