@@ -228,14 +228,16 @@ class Autoloader
      */
     public function loadClass($className)
     {
-
-        if (null === $this->namespace || $this->namespace.$this->namespaceSeparator === substr($className, 0, strlen($this->namespace.$this->namespaceSeparator))) {
+        $namespace1 = $this->namespace . $this->namespaceSeparator;
+        $namespace2 = substr($className, 0, strlen($this->namespace . $this->namespaceSeparator));
+        if (null === $this->namespace || $namespace1 === $namespace2) {
             $fileName = '';
             $namespace = '';
             if (false !== ($lastNsPos = strripos($className, $this->namespaceSeparator))) {
                 $namespace = substr($className, 0, $lastNsPos);
                 $className = substr($className, $lastNsPos + 1);
-                $fileName = str_replace($this->namespaceSeparator, DIRECTORY_SEPARATOR, $namespace) . DIRECTORY_SEPARATOR;
+                $namespacePath = str_replace($this->namespaceSeparator, DIRECTORY_SEPARATOR, $namespace);
+                $fileName = $namespacePath . DIRECTORY_SEPARATOR;
             }
             $fileName .= str_replace('_', DIRECTORY_SEPARATOR, $className) . $this->fileExtension;
 

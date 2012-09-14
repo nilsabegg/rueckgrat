@@ -7,10 +7,10 @@
 namespace Rueckgrat;
 
 /**
- * View
+ * Bootloader
  *
- * This class handles the templates of
- * the application.
+ * This class handles bootstrapping
+ * of the application
  *
  * @author  Nils Abegg <rueckgrat@nilsabegg.de>
  * @version 0.1
@@ -25,6 +25,7 @@ class Bootloader
     *
     * Holds the configuration values in an array.
     *
+    * @access protected
     * @var mixed
     */
     protected $config = null;
@@ -32,8 +33,9 @@ class Bootloader
     /**
      * pimple
      *
+     * Holds the Pimple dependency injection container.
      *
-     *
+     * @access protected
      * @var \Pimple
      */
     protected $pimple = null;
@@ -68,6 +70,7 @@ class Bootloader
      *
      * @access public
      * @return void
+     * @todo ErrorLogging
      */
     public function setReporting()
     {
@@ -84,52 +87,18 @@ class Bootloader
 
     }
 
-    protected function stripSlashesDeep($value)
-    {
-
-        if (is_array($value)) {
-            $value = array_map('stripSlashesDeep', $value);
-        } else {
-            $value = stripslashes($value);
-        }
-
-        return $value;
-
-    }
-
-    public function unregisterGlobals()
-    {
-
-        if (ini_get('register_globals')) {
-            $array = array(
-                '_SESSION',
-                '_POST',
-                '_GET',
-                '_COOKIE',
-                '_REQUEST',
-                '_SERVER',
-                '_ENV',
-                '_FILES'
-            );
-            foreach ($array as $value) {
-                $this->unregisterGlobal($value);
-            }
-        }
-
-    }
-
-    public function removeMagicQuotes()
-    {
-
-        if (get_magic_quotes_gpc() == true) {
-            $_GET    = $this->stripSlashesDeep($_GET   );
-            $_POST   = $this->stripSlashesDeep($_POST  );
-            $_COOKIE = $this->stripSlashesDeep($_COOKIE);
-        }
-
-    }
-
-    protected function routeURL($url)
+    /**
+     * routeUrl
+     *
+     * Routes the given URL.
+     *
+     * @access protected
+     * @global mixed $routing
+     * @param string $url
+     * @return string
+     * @todo Understand routeUrl()
+     */
+    protected function routeUrl($url)
     {
 
         global $routing;
@@ -143,6 +112,17 @@ class Bootloader
 
     }
 
+    /**
+     * callHook
+     *
+     * Calls the controller for the route.
+     *
+     * @access public
+     * @global string $url
+     * @global string $default
+     * @return void
+     * @todo Refactor Method and remove globals
+     */
     public function callHook()
     {
 
@@ -177,26 +157,6 @@ class Bootloader
             call_user_func_array(array($dispatch, "afterAction"), $queryString);
         } else {
 
-        }
-
-    }
-
-    /**
-     * unregisterGlobal
-     *
-     *
-     *
-     * @access protected
-     * @param  string $type
-     * @return void
-     */
-    protected function unregisterGlobal($type)
-    {
-
-        foreach ($GLOBALS[$type] as $key => $var) {
-            if ($var === $GLOBALS[$key]) {
-                unset($GLOBALS[$key]);
-            }
         }
 
     }
