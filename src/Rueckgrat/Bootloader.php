@@ -6,6 +6,17 @@
 
 namespace Rueckgrat;
 
+/**
+ * View
+ *
+ * This class handles the templates of
+ * the application.
+ *
+ * @author  Nils Abegg <rueckgrat@nilsabegg.de>
+ * @version 0.1
+ * @package Rueckgrat
+ * @category Bootstrap
+ */
 class Bootloader
 {
 

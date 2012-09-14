@@ -22,6 +22,10 @@ namespace Rueckgrat;
  * @author Matthew Weier O'Phinney <matthew@zend.com>
  * @author Kris Wallsmith <kris.wallsmith@gmail.com>
  * @author Fabien Potencier <fabien.potencier@symfony-project.org>
+ * @author  Nils Abegg <rueckgrat@nilsabegg.de>
+ * @version 0.1
+ * @package Rueckgrat
+ * @category Class Loading
  */
 class Autoloader
 {

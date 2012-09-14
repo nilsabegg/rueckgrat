@@ -9,6 +9,17 @@ namespace Rueckgrat;
 use Doctrine\ORM\EntityManager as EntityManager;
 use Doctrine\ORM\Configuration as DoctrineConfiguration;
 
+/**
+ * View
+ *
+ * This class handles the templates of
+ * the application.
+ *
+ * @author  Nils Abegg <rueckgrat@nilsabegg.de>
+ * @version 0.1
+ * @package Rueckgrat
+ * @category Database
+ */
 class Database
 {
 
