@@ -46,6 +46,8 @@ class Database
     /**
      * doctrineConfig
      *
+     * Holds the Doctrine configuration values in
+     * an array.
      *
      * @access protected
      * @var \Doctrine\ORM\Configuration
@@ -55,6 +57,7 @@ class Database
     /**
      * entityManager
      *
+     * Holds the Doctrine entity manager.
      *
      * @access protected
      * @var \Doctrine\ORM\EntityManager
@@ -64,6 +67,7 @@ class Database
     /**
      * pimple
      *
+     * Holds the Pimple dependency injection container.
      *
      * @access protected
      * @var \Pimple
@@ -76,7 +80,7 @@ class Database
      * Constructs the object.
      *
      * @access public
-     * @param  \Pimple $pimple
+     * @param  mixed $config
      * @return void
      */
     public function __construct($config)
