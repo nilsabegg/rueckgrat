@@ -1,6 +1,14 @@
 <?php
 
 /**
+ * This file is part of the Rückgrat Framework
+ */
+
+namespace Rueckgrat\Admin;
+
+use Rueckgrat\View\View as View;
+
+/**
  * Controller
  *
  * This class is the blueprint for all the backend controllers
@@ -11,10 +19,6 @@
  * @category Controller
  * @package Admin
  */
-namespace Rueckgrat\Admin;
-
-use Rueckgrat\View\View as View;
-
 abstract class Controller extends \Rueckgrat\Controller\Controller
 {
 

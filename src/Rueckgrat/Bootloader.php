@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * This file is part of the Rückgrat Framework
+ */
+
 namespace Rueckgrat;
 
 class Bootloader

@@ -1,7 +1,23 @@
 <?php
 
+/**
+ * This file is part of the Rückgrat Framework
+ */
+
 namespace Rueckgrat\View;
 
+/**
+ * View
+ *
+ * This class handles the templates of
+ * the application.
+ *
+ * @author  Nils Abegg <rueckgrat@nilsabegg.de>
+ * @version 0.1
+ * @package Rueckgrat
+ * @subpackage View
+ * @category View
+ */
 class View
 {
 
@@ -39,6 +55,14 @@ class View
 
     }
 
+    /**
+     * render
+     *
+     * Renders the Javascript of the view object.
+     *
+     * @access public
+     * @return string
+     */
     public function renderJs()
     {
 
@@ -52,6 +76,14 @@ class View
 
     }
 
+    /**
+     * render
+     *
+     * Renders the template of the view object.
+     *
+     * @access public
+     * @return string
+     */
     public function render()
     {
 
