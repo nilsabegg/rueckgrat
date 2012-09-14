@@ -10,10 +10,10 @@ use Doctrine\ORM\EntityManager as EntityManager;
 use Doctrine\ORM\Configuration as DoctrineConfiguration;
 
 /**
- * View
+ * Database
  *
- * This class handles the templates of
- * the application.
+ * This class configures Doctrine and creates
+ * the Doctrine entity manager.
  *
  * @author  Nils Abegg <rueckgrat@nilsabegg.de>
  * @version 0.1
@@ -24,7 +24,11 @@ class Database
 {
 
     /**
+     * cache
      *
+     * This class holds the Doctrine cache.
+     *
+     * @access protected
      * @var Object
      */
     protected $cache = null;
@@ -34,19 +38,26 @@ class Database
     *
     * Holds the configuration values in an array.
     *
+    * @access protected
     * @var mixed
     */
     protected $config = null;
 
     /**
+     * doctrineConfig
      *
-     * @var Doctrine\ORM\Configuration
+     *
+     * @access protected
+     * @var \Doctrine\ORM\Configuration
      */
     protected $doctrineConfig = null;
 
     /**
+     * entityManager
      *
-     * @var Doctrine\ORM\EntityManager
+     *
+     * @access protected
+     * @var \Doctrine\ORM\EntityManager
      */
     protected $entityManager = null;
 
@@ -54,7 +65,7 @@ class Database
      * pimple
      *
      *
-     *
+     * @access protected
      * @var \Pimple
      */
     protected $pimple = null;
@@ -81,6 +92,14 @@ class Database
         $this->setup();
     }
 
+    /**
+     * getEntityManager
+     *
+     * Gets the Doctrine entity manager.
+     *
+     * @access protected
+     * @return \Doctrine\ORM\EntityManager
+     */
     public function getEntityManager()
     {
 
@@ -93,6 +112,14 @@ class Database
 
     }
 
+    /**
+     * createEntityManager
+     *
+     * Creates the Doctrine entity manager.
+     *
+     * @access protected
+     * @return void
+     */
     protected function createEntityManager()
     {
 
@@ -108,16 +135,32 @@ class Database
 
     }
 
+    /**
+     * setup
+     *
+     * Setup Doctrine
+     *
+     * @access protected
+     * @return void
+     */
     protected function setup()
     {
 
-        $this->setupCaches();
-        $this->setupProxies();
+        $this->createCaches();
+        $this->createProxies();
         $this->createEntityManager();
 
     }
 
-    protected function setupCaches()
+    /**
+     * createCaches
+     *
+     * Creates the caches for Doctrine.
+     *
+     * @access protected
+     * @return void
+     */
+    protected function createCaches()
     {
 
         $this->doctrineConfig->setMetadataCacheImpl($this->cache);
@@ -129,7 +172,15 @@ class Database
 
     }
 
-    protected function setupProxies()
+    /**
+     * createProxies
+     *
+     * Creates the proxies for Doctrine
+     *
+     * @access protected
+     * @return void
+     */
+    protected function createProxies()
     {
 
         $proxyDir = $this->config['general.namespace'] . '/Model/Proxy';
