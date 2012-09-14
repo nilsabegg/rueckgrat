@@ -11,10 +11,25 @@ use Rueckgrat\View\View as View;
 /**
  * DependencyInjectionContainer
  *
+ * This class handles the templates of
+ * the application.
+ *
+ * @author  Nils Abegg <rueckgrat@nilsabegg.de>
+ * @version 0.1
+ * @package Rueckgrat
+ * @category Dependency Injection
  */
 class DependencyInjectionContainer extends \Pimple
 {
 
+    /**
+     * __construct
+     *
+     * Constructs the object.
+     *
+     * @param mixed  $config
+     * @return void
+     */
     public function __construct($config)
     {
 

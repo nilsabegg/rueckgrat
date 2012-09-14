@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <phpdoc>
-    <title>My project</title>
+    <title>Rückgrat</title>
     <parser>
         <target>output</target>
         <markers>
@@ -9,8 +9,6 @@
         </markers>
         <extensions>
             <extension>php</extension>
-            <extension>php3</extension>
-            <extension>phtml</extension>
         </extensions>
         <visibility></visibility>
     </parser>
@@ -28,10 +26,6 @@
         <template name="responsive" />
     </transformations>
     <files>
-        <file>test.php</file>
-        <file>bin/*</file>
         <directory>src</directory>
-        <directory>tes??</directory>
-        <ignore>test/*</ignore>
     </files>
 </phpdoc>

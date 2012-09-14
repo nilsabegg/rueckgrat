@@ -21,8 +21,14 @@ namespace Rueckgrat\View;
 class View
 {
 
-    protected $file = null;
-
+    /**
+     * javascripts
+     *
+     * Holds the names of the javascript files.
+     *
+     * @access protected
+     * @var mixed
+     */
     protected $javascripts = array();
 
     protected $vars = array();
