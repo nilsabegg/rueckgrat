@@ -302,7 +302,7 @@ abstract class Controller
     protected function getUrl($name = '')
     {
 
-        $url = 'http://' . $_SERVER['SERVER_NAME'] . '/' . $name;
+        $url = $this->config['general.url'] . '/' . $name;
 
         return $url;
 
