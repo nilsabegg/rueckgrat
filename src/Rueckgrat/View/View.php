@@ -37,6 +37,15 @@ class View
 
     protected $viewRootPath = null;
 
+    /**
+     * __construct
+     *
+     * Constructs the object.
+     * 
+     * @param string $viewRootPath
+     * @param mixed $config
+     * return void
+     */
     public function __construct($viewRootPath, $config)
     {
 

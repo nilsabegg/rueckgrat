@@ -34,7 +34,8 @@ class Autoloader
      * Creates a new <tt>SplClassLoader</tt> that loads classes of the
      * specified namespace.
      *
-     * @param string $ns The namespace to use.
+     * @param string $namespace
+     * @return void
      */
     public function __construct($namespace = null, $includePath = null)
     {

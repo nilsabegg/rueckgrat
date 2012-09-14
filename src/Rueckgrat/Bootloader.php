@@ -30,7 +30,7 @@ class Bootloader
     /**
      * __construct
      *
-     *
+     * Constructs the object.
      *
      * @access public
      * @param  \Pimple $pimple
