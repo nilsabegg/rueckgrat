@@ -215,6 +215,7 @@ abstract class Controller
      * @access protected
      * @param boolean $ajax
      * @return void
+     * @todo Implement response object
      */
     protected function renderPage($ajax = false)
     {
@@ -264,6 +265,7 @@ abstract class Controller
      * @access protected
      * @param string $path
      * @return void
+     * @todo Implement response object
      */
     protected function redirect ($path)
     {
