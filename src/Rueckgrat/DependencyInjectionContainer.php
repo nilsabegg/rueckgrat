@@ -62,7 +62,7 @@ class DependencyInjectionContainer extends \Pimple
      * @access protected
      * @return void
      */
-    protected function registerConfig($config)
+    protected function registerConfig()
     {
 
         $newConfig = array();
