@@ -13,6 +13,7 @@ namespace Rueckgrat\View;
  * the application.
  *
  * @author  Nils Abegg <rueckgrat@nilsabegg.de>
+ * @author  Alexander Feil <rueckgrat@alexanderfeil.me>
  * @version 0.1
  * @package Rueckgrat
  * @subpackage View
