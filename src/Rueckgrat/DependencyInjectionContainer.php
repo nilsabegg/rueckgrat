@@ -39,6 +39,7 @@ class DependencyInjectionContainer extends \Pimple
      *
      * Constructs the object.
      *
+     * @access public
      * @param mixed  $config
      * @return void
      */
