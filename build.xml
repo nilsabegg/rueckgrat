@@ -12,6 +12,7 @@
    <sequential>
     <antcall target="pdepend"/>
     <antcall target="phpmd-ci"/>
+    <antcall target="phpdoc-error"/>
    </sequential>
    <antcall target="phpcpd"/>
    <antcall target="phpcs-ci"/>
