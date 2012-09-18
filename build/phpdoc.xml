@@ -2,10 +2,10 @@
 <phpdoc>
     <title>Rückgrat</title>
     <parser>
-        <target>output</target>
+        <target>doc</target>
         <markers>
             <item>TODO</item>
-            <item>FIXME</item>
+            <item>todo</item>
         </markers>
         <extensions>
             <extension>php</extension>
@@ -15,15 +15,9 @@
     <transformer>
         <target>output</target>
     </transformer>
-    <logging>
-        <level>warn</level>
-        <paths>
-            <default>{APP_ROOT}/data/log/{DATE}.log</default>
-            <errors>{APP_ROOT}/data/log/{DATE}.errors.log</errors>
-        </paths>
-    </logging>
     <transformations>
         <template name="responsive" />
+        <template name="checkstyle" />
     </transformations>
     <files>
         <directory>src</directory>
