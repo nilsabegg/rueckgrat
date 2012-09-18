@@ -1,25 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <phpdoc>
-    <title>Rückgrat</title>
-    <parser>
-        <target>doc</target>
-        <markers>
-            <item>TODO</item>
-            <item>todo</item>
-        </markers>
-        <extensions>
-            <extension>php</extension>
-        </extensions>
-        <visibility></visibility>
-    </parser>
-    <transformer>
-        <target>output</target>
-    </transformer>
+  <parser>
+    <target>doc</target>
+  </parser>
+  <transformer>
+    <target>doc</target>
+  </transformer>
     <transformations>
         <template name="responsive" />
-        <template name="checkstyle" />
     </transformations>
-    <files>
-        <directory>src</directory>
-    </files>
+  <files>
+    <directory>src</directory>
+  </files>
 </phpdoc>

@@ -109,7 +109,12 @@
 
  <target name="phpdoc" description="Generate API documentation">
  <exec executable="phpdoc">
-  <arg line="-c build/phpdoc.xml" />
+  <arg line="-d ${basedir}/src -t ${basedir}/doc --template='responsive'" />
+ </exec>
+</target>
+ <target name="phpdoc-error" description="Generate API documentation Checkstyle log file">
+ <exec executable="phpdoc">
+  <arg line="-d ${basedir}/src -t ${basedir}/build/ --template='checkstyle'" />
  </exec>
 </target>
 
