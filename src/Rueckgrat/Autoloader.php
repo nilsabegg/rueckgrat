@@ -91,7 +91,16 @@ class Autoloader
 
     }
 
-
+    /**
+     * setNamespaceSeparator
+     *
+     * Sets the namespace separator used by classes in the
+     * namespace of this class loader.
+     *
+     * @access public
+     * @param string $separator
+     * @return void
+     */
     public function setNamespaceSeparator($separator)
     {
 
