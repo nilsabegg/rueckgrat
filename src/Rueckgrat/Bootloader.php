@@ -58,7 +58,15 @@ class Bootloader
         $appDir = $this->config['general.appDir'] . 'src';
         $appLoader = new Autoloader($this->config['general.namespace'], $appDir);
         $appLoader->register();
+        $this->router = new Router($this->pimple);
 
+    }
+
+    public function route()
+    {
+
+        $request = $this->pimple['request'];
+        $this->router->route($request->getPathInfo());
     }
 
     /**
@@ -72,7 +80,7 @@ class Bootloader
      * @return void
      * @todo ErrorLogging
      */
-    public function setReporting()
+    protected function setReporting()
     {
 
         if ($this->config['general.debug'] == true) {

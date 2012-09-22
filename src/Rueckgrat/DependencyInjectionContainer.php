@@ -9,6 +9,10 @@ namespace Rueckgrat;
 use Rueckgrat\View\View as View;
 use Symfony\Component\HttpFoundation\Request as Request;
 use Symfony\Component\HttpFoundation\Response as Response;
+use Symfony\Component\Routing\Matcher\UrlMatcher as UrlMatcher;
+use Symfony\Component\Routing\RequestContext as RequestContext;
+use Symfony\Component\Routing\RouteCollection as RouteCollection;
+use Symfony\Component\Routing\Route as Route;
 
 /**
  * DependencyInjectionContainer
@@ -50,6 +54,7 @@ class DependencyInjectionContainer extends \Pimple
         $this->registerConfig();
         $this->registerDatabase();
         $this->registerResponse();
+        $this->registerRouting();
         $this->registerView();
 
     }
