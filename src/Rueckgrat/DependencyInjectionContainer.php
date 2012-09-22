@@ -54,7 +54,6 @@ class DependencyInjectionContainer extends \Pimple
         $this->registerConfig();
         $this->registerDatabase();
         $this->registerResponse();
-        $this->registerRouting();
         $this->registerView();
 
     }
