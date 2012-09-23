@@ -38,6 +38,7 @@ class Router
         $this->roller = new Roller();
         $this->type = $type;
         if ($this->type == 'annotation') {
+            echo '1';
             $this->registerAnnotationControllers();
         }
 
