@@ -23,6 +23,36 @@ class Router
 {
 
     /**
+     * pimple
+     *
+     * Holds the Pimple dependency injection container.
+     *
+     * @access protected
+     * @var \Pimple
+     */
+    protected $pimple = null;
+
+    /**
+     * roller
+     *
+     *
+     *
+     * @access protected
+     * @var type
+     */
+    protected $roller = null;
+
+    /**
+     * type
+     *
+     *
+     *
+     * @access protected
+     * @var string
+     */
+    protected $type = null;
+
+    /**
      * __construct
      *
      * Constructs the object.

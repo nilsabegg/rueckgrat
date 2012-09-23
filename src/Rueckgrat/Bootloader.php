@@ -41,6 +41,16 @@ class Bootloader
     protected $pimple = null;
 
     /**
+     * router
+     *
+     * Holds the router object.
+     *
+     * @access protected
+     * @var type \Rueckgrat\Router
+     */
+    protected $router = null;
+
+    /**
      * __construct
      *
      * Constructs the object.
@@ -65,7 +75,8 @@ class Bootloader
     /**
      * route
      *
-     *
+     * Routes the request and calls the action
+     * of the matched controller.
      *
      * @access public
      * @return void
@@ -81,7 +92,7 @@ class Bootloader
         $actionName = $controllerAndAction[1];
         $controller = new $controllerName($actionName, $this->pimple);
         $controller->$actionName();
-        
+
     }
 
     /**
@@ -106,80 +117,6 @@ class Bootloader
             ini_set('display_errors', 'Off');
             ini_set('log_errors', 'On');
             ini_set('error_log', '../log/error.log');
-        }
-
-    }
-
-    /**
-     * routeUrl
-     *
-     * Routes the given URL.
-     *
-     * @access protected
-     * @global mixed $routing
-     * @param string $url
-     * @return string
-     * @todo Understand routeUrl()
-     */
-    protected function routeUrl($url)
-    {
-
-        global $routing;
-        foreach ($routing as $pattern => $result) {
-            if (preg_match( $pattern, $url)) {
-                return preg_replace( $pattern, $result, $url );
-            }
-        }
-
-        return ($url);
-
-    }
-
-    /**
-     * callHook
-     *
-     * Calls the controller for the route.
-     *
-     * @access public
-     * @global string $url
-     * @global string $default
-     * @return void
-     * @todo Refactor Method and remove globals
-     */
-    public function callHook()
-    {
-
-        global $url;
-        global $default;
-
-        $queryString = array();
-
-        if (!isset($url)) {
-            $controller = $default['controller'];
-            $action = $default['action'];
-        } else {
-            //$url = str_replace('redirect:/public/index.php/', '', $url);
-            $url = $this->routeURL($url);
-            $urlArray = explode("/", $url);
-            $controller = $urlArray[0];
-            array_shift($urlArray);
-            if (isset($urlArray[0])) {
-                $action = $urlArray[0];
-                array_shift($urlArray);
-            } else {
-                $action = 'index'; // Default Action
-            }
-            $queryString = $urlArray;
-        }
-        $controllerName = ucfirst($controller);
-        $controller = '\\' . $this->config['general.namespace'] . '\\Controller\\' . $controllerName;
-        $dispatch = new $controller($action, $this->pimple);
-        if ((int) method_exists($controller, $action)) {
-            call_user_func_array(array($dispatch, "beforeAction"), $queryString);
-            call_user_func_array(array($dispatch, $action), $queryString);
-            call_user_func_array(array($dispatch, "afterAction"), $queryString);
-        } else {
-
         }
 
     }
