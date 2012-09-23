@@ -45,7 +45,6 @@ class Router
 
     public function route($rawRoute)
     {
-        echo $rawRoute;
         $route = $this->roller->dispatch($rawRoute);
         print_r($route); // returns 'index'
 
@@ -57,10 +56,9 @@ class Router
         $appNamespace = $this->pimple['config']['general.namespace'];
         $appDir = $this->pimple['config']['general.appDir'];
         $controllerPath = $appDir . 'src/' . $appNamespace . '/Controller';
-        echo $controllerPath;
         $directoryHandle = opendir($controllerPath);
             while (false !== ($fileName = readdir($directoryHandle))) {
-                echo $fileName;
+                echo substr($fileName, 0, -4) . "\n";
                 if (substr($fileName, 0, -4) == '.php') {
                     $controllerName = str_replace($fileName, '', '.php');
                     $fullControllerName = '\\' . $appNamespace . '\\Controller\\' . $controllerName;
