@@ -86,7 +86,7 @@ class Router
             if (substr($fileName, $fileNameLength - 4) == '.php') {
                 $controllerName = substr($fileName, 0, -4);
                 $fullControllerName = '\\' . $appNamespace . '\\Controller\\' . $controllerName;
-                $this->roller->importAnnotationMethods($fullControllerName , '/Action$/');
+                $this->roller->importAnnotationMethods($fullControllerName, '/Action$/');
             }
         }
         closedir($directoryHandle);
