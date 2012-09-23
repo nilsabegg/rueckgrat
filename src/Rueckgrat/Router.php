@@ -38,7 +38,6 @@ class Router
         $this->roller = new Roller();
         $this->type = $type;
         if ($this->type == 'annotation') {
-            echo '1';
             $this->registerAnnotationControllers();
         }
 
@@ -58,6 +57,7 @@ class Router
         $appNamespace = $this->pimple['config']['general.namespace'];
         $appDir = $this->pimple['config']['general.appDir'];
         $controllerPath = $appDir . 'src/' . $appNamespace . '/Controller';
+        echo $controllerPath;
         $directoryHandle = opendir($controllerPath);
             while (false !== ($fileName = readdir($directoryHandle))) {
                 if (substr($fileName, 0, -4) == '.php') {
