@@ -64,7 +64,7 @@ class Router
                     $controllerName = str_replace($fileName, '', '.php');
                     $fullControllerName = '\\' . $appNamespace . '\\Controller\\' . $controllerName;
                     echo $fullControllerName;
-                    $this->router->importAnnotationMethods( $fullControllerName , '/Action$/' );
+                    $this->roller->importAnnotationMethods( $fullControllerName , '/Action$/' );
                 }
             }
             closedir($directoryHandle);
