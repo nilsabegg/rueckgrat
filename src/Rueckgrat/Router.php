@@ -46,7 +46,11 @@ class Router
     /**
      * route
      *
-     *
+     * Returns the matched route for raw route.
+     * Expected input ist something like:
+     * 'project/edit/1'
+     * This is wrong:
+     * 'dir/project/edit/1
      *
      * @access public
      * @param string $rawRoute
@@ -63,7 +67,8 @@ class Router
     /**
      * registerAnnotationControllers
      *
-     *
+     * Registers the controllers of the application
+     * for the annotation reader.
      *
      * @access protected
      * @return void
@@ -75,15 +80,15 @@ class Router
         $appDir = $this->pimple['config']['general.appDir'];
         $controllerPath = $appDir . 'src/' . $appNamespace . '/Controller';
         $directoryHandle = opendir($controllerPath);
-            while (false !== ($fileName = readdir($directoryHandle))) {
-                $fileNameLength = strlen($fileName);
-                if (substr($fileName, $fileNameLength - 4) == '.php') {
-                    $controllerName = substr($fileName, 0, -4);
-                    $fullControllerName = '\\' . $appNamespace . '\\Controller\\' . $controllerName;
-                    $this->roller->importAnnotationMethods( $fullControllerName , '/Action$/' );
-                }
+        while (false !== ($fileName = readdir($directoryHandle))) {
+            $fileNameLength = strlen($fileName);
+            if (substr($fileName, $fileNameLength - 4) == '.php') {
+                $controllerName = substr($fileName, 0, -4);
+                $fullControllerName = '\\' . $appNamespace . '\\Controller\\' . $controllerName;
+                $this->roller->importAnnotationMethods( $fullControllerName , '/Action$/' );
             }
-            closedir($directoryHandle);
+        }
+        closedir($directoryHandle);
 
     }
 
