@@ -59,7 +59,7 @@ class Router
         $directoryHandle = opendir($controllerPath);
             while (false !== ($fileName = readdir($directoryHandle))) {
                 $fileNameLength = strlen($fileName);
-                echo substr($fileName, $fileNameLength, - 3) . "\n";
+                echo substr($fileName, $fileNameLength - 3) . "\n";
                 if (substr($fileName, $fileNameLength - 3) == '.php') {
                     $controllerName = str_replace($fileName, '', '.php');
                     $fullControllerName = '\\' . $appNamespace . '\\Controller\\' . $controllerName;
