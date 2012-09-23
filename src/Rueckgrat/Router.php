@@ -45,7 +45,7 @@ class Router
 
     public function route($rawRoute)
     {
-
+        echo $rawRoute;
         $route = $this->roller->dispatch($rawRoute);
         print_r($route); // returns 'index'
 
@@ -62,6 +62,7 @@ class Router
                 if (substr($fileName, 0, -4) == '.php') {
                     $controllerName = str_replace($fileName, '', '.php');
                     $fullControllerName = '\\' . $appNamespace . '\\Controller\\' . $controllerName;
+                    echo $fullControllerName;
                     $this->router->importAnnotationMethods( $fullControllerName , '/Action$/' );
                 }
             }
