@@ -43,13 +43,31 @@ class Router
 
     }
 
+    /**
+     * route
+     *
+     *
+     *
+     * @access public
+     * @param string $rawRoute
+     * @return \Roller\MatchedRoute;
+     */
     public function route($rawRoute)
     {
-        $route = $this->roller->dispatch($rawRoute);
-        print_r($route); // returns 'index'
 
+        $route = $this->roller->dispatch($rawRoute);
+
+        return $route->route;
     }
 
+    /**
+     * registerAnnotationControllers
+     *
+     *
+     *
+     * @access protected
+     * @return void
+     */
     protected function registerAnnotationControllers()
     {
 
@@ -59,11 +77,9 @@ class Router
         $directoryHandle = opendir($controllerPath);
             while (false !== ($fileName = readdir($directoryHandle))) {
                 $fileNameLength = strlen($fileName);
-                echo substr($fileName, $fileNameLength - 4) . "\n";
                 if (substr($fileName, $fileNameLength - 4) == '.php') {
-                    $controllerName = str_replace($fileName, '', '.php');
+                    $controllerName = substr($fileName, 0, -4);
                     $fullControllerName = '\\' . $appNamespace . '\\Controller\\' . $controllerName;
-                    echo $fullControllerName;
                     $this->roller->importAnnotationMethods( $fullControllerName , '/Action$/' );
                 }
             }

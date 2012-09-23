@@ -62,11 +62,25 @@ class Bootloader
 
     }
 
+    /**
+     * route
+     *
+     *
+     *
+     * @access public
+     * @return void
+     * @todo Add parameter support!!!
+     */
     public function route()
     {
 
         $request = $this->pimple['request'];
-        $this->router->route($request->getPathInfo());
+        $route = $this->router->route($request->getPathInfo());
+        $controllerAndAction = $route['callback'];
+        $controllerName = $controllerAndAction[0];
+        $actionName = $controllerAndAction[1];
+        $controller = new $controllerName($actionName, $this->pimple);
+        $controller->$actionName();
     }
 
     /**
