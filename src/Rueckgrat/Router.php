@@ -91,7 +91,9 @@ class Router
     {
 
         $route = $this->roller->dispatch($rawRoute);
-
+        echo '<pre>';
+        print_r($route);
+        echo '</pre>';
         return $route->route;
     }
 
