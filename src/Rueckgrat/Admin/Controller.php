@@ -6,8 +6,8 @@
 
 namespace Rueckgrat\Admin;
 
-use Rueckgrat\View\View as View;
 use \Roller\Annotations\Route as Route;
+use Rueckgrat\View\View as View;
 
 /**
  * Controller
