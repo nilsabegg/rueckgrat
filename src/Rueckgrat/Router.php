@@ -9,7 +9,7 @@ namespace Rueckgrat;
 use \Roller\Router as Roller;
 
 /**
- * Routing
+ * Router
  *
  * This class is the parent class for the routing class(es)
  * of the application.

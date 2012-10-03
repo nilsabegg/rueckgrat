@@ -6,6 +6,7 @@
 
 namespace Rueckgrat\Controller;
 
+use \Roller\Annotations\Route as Route;
 use Rueckgrat\View\View as View;
 
 /**
