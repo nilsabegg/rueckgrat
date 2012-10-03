@@ -91,11 +91,9 @@ class Router
     {
 
         $route = $this->roller->dispatch($rawRoute);
-        echo '<pre>';
-        print_r($this->roller);
-        print_r($route);
-        echo '</pre>';
+
         return $route->route;
+
     }
 
     /**
@@ -119,7 +117,6 @@ class Router
             if (substr($fileName, $fileNameLength - 4) == '.php') {
                 $controllerName = substr($fileName, 0, -4);
                 $fullControllerName = '\\' . $appNamespace . '\\Controller\\' . $controllerName;
-                echo $fullControllerName . "\n";
                 $this->roller->importAnnotationMethods($fullControllerName, '/Action$/');
             }
         }
