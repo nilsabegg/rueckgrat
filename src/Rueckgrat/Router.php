@@ -102,9 +102,9 @@ class Router
 
         $urlWithoutHttp = str_replace('http://', '', $this->pimple['config']['general.url']);
         echo '<pre>';
-        $urlWithoutHttpParts = explode('/', $urlWithoutHttp);
+        $urlWithoutHttpParts = explode('/', $urlWithoutHttp, -1);
         print_r($urlWithoutHttpParts);
-        $urlWithoutHttpParts1 = explode('/', $urlWithoutHttp, 1);
+        $urlWithoutHttpParts1 = explode('/', $urlWithoutHttp, 2);
         print_r($urlWithoutHttpParts1);
         return $urlWithoutHttpParts[1];
 
