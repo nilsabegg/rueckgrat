@@ -7,6 +7,7 @@
 namespace Rueckgrat\Controller;
 
 use \Roller\Annotations\Route as Route;
+use \Symfony\Component\Yaml\Parser as Yaml;
 use Rueckgrat\View\View as View;
 
 /**
@@ -158,6 +159,15 @@ abstract class Controller
             $namespace = '\\' . $this->config['general.namespace'] . '\\Model\\Repository\\';
             $repositoryName = $namespace . $this->getControllerName($this);
             $this->repository = new $repositoryName($this->pimple);
+        }
+        if ($this->config['general.i18n'] == true) {
+            $userLanguage = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+            echo $userLanguage;
+            $yamlParser = new Yaml();
+            $this->strings = $yamlParser->parse();
+            print_r($this->strings);
+            $_SESSION['language'] = $userLanguage;
+
         }
         $this->rootUrl = $this->getRootUrl();
 
