@@ -148,7 +148,7 @@ abstract class Controller
         $this->action = $action;
         $this->createTemplate();
         $this->entityManager = $this->pimple['entityManager'];
-        if ($this->secured == true && isset($_SESSION['id']) == false) {
+        if ($this->isSecured == true && isset($_SESSION['id']) == false) {
             $this->redirect('user/login');
         } elseif (isset($_SESSION['id']) == true) {
             $repositoryName = '\\' . $this->config['general.namespace'] . '\\Model\\Repository\\User';
@@ -164,7 +164,6 @@ abstract class Controller
             $userLanguage = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
             $yamlParser = new Yaml();
             $this->strings = $yamlParser->parse(file_get_contents($this->config['general.appDir'] . 'etc/i18n/' . $userLanguage . '.yml'));
-            print_r($this->strings);
             $_SESSION['language'] = $userLanguage;
 
         }
