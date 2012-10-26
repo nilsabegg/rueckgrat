@@ -90,9 +90,20 @@ class Router
     public function route($rawRoute)
     {
 
+        echo $this->stripPathFromUrl($rawRoute);
         $route = $this->roller->dispatch($rawRoute);
 
         return $route->route;
+
+    }
+
+    protected function stripPathFromUrl($rawRoute)
+    {
+
+        $urlWithoutHttp = str_replace('http://', '', $this->pimple['config']['general.url']);
+        $urlWithoutHttpParts = explode('/', $rawRouteWithoutHttp, 1);
+
+        return $urlWithoutHttpParts[1];
 
     }
 
