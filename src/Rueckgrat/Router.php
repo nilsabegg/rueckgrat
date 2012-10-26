@@ -91,6 +91,9 @@ class Router
     {
 
         $rawRouteWithoutPath = str_replace('/' . $this->stripPathFromUrl($rawRoute), '', $rawRoute);
+        if ($rawRouteWithoutPath == '') {
+            $rawRouteWithoutPath = '/';
+        }
         print_r($rawRouteWithoutPath);
         $route = $this->roller->dispatch($rawRouteWithoutPath);
 
