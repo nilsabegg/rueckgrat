@@ -22,7 +22,8 @@
         "doctrine/orm": "2.2.2",
         "symfony/console": "2.*",
         "symfony/http-foundation": "2.1.*",
-        "c9s/Roller": "dev-master"
+        "c9s/Roller": "dev-master",
+        "symfony/yaml": "master-dev"
     },
     "autoload": {
         "psr-0": {

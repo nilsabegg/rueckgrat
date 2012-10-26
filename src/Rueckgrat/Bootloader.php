@@ -86,6 +86,7 @@ class Bootloader
     {
 
         $request = $this->pimple['request'];
+        echo $request->getPathInfo();
         $route = $this->router->route($request->getPathInfo());
         $controllerAndAction = $route['callback'];
         $controllerName = $controllerAndAction[0];
