@@ -46,9 +46,19 @@ class Bootloader
      * Holds the router object.
      *
      * @access protected
-     * @var type \Rueckgrat\Router
+     * @var \Rueckgrat\Router
      */
     protected $router = null;
+
+    /**
+     * session
+     *
+     * Holds the session object.
+     *
+     * @access protected
+     * @var Symfony\Component\HttpFoundation\Session\Session
+     */
+    protected $session = null;
 
     /**
      * __construct
@@ -69,6 +79,8 @@ class Bootloader
         $appLoader = new Autoloader($this->config['general.namespace'], $appDir);
         $appLoader->register();
         $this->router = new Router($this->pimple);
+        $this->session = $this->pimple['session'];
+        $this->session->start();
 
     }
 

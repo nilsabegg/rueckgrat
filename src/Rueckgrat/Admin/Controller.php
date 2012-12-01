@@ -33,7 +33,7 @@ abstract class Controller extends \Rueckgrat\Controller\Controller
      * @access protected
      * @var boolean
      */
-    protected $isSecured = true;
+    protected $isSecured = false;
 
     /**
      * __construct
@@ -78,7 +78,9 @@ abstract class Controller extends \Rueckgrat\Controller\Controller
     protected function createTemplate()
     {
 
-        $this->template = new View('admin', $this->config);
+        $this->pimple['view.rootPath'] = 'admin';
+        $view = $this->pimple['view'];
+        $this->template = $view;
 
     }
 

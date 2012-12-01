@@ -9,6 +9,7 @@ namespace Rueckgrat;
 use Rueckgrat\View\View as View;
 use Symfony\Component\HttpFoundation\Request as Request;
 use Symfony\Component\HttpFoundation\Response as Response;
+use Symfony\Component\HttpFoundation\Session\Session as Session;
 
 /**
  * DependencyInjectionContainer
@@ -51,6 +52,7 @@ class DependencyInjectionContainer extends \Pimple
         $this->registerDatabase();
         $this->registerRequest();
         $this->registerResponse();
+        $this->registerSession();
         $this->registerView();
 
     }
@@ -142,6 +144,25 @@ class DependencyInjectionContainer extends \Pimple
     }
 
     /**
+     * registerSession
+     *
+     * Registers the session object for access
+     * via the Dependency Injection Container
+     *
+     * @access protected
+     * @return void
+     */
+    protected function registerSession()
+    {
+
+        $this['session'] = $this->share(function() {
+            $session = new Session();
+
+            return $session;
+        });
+
+    }
+    /**
      * registerView
      *
      * Registers the view object for access
@@ -154,8 +175,9 @@ class DependencyInjectionContainer extends \Pimple
     {
 
         $this['view.rootPath'] = 'index/index';
+        $pimple = $this;
         $this['view'] =  function($pimple) {
-            $view = new View($pimple['view.rootPath'], $pimple['config']);
+            $view = new View($pimple['view.rootPath'], $pimple);
 
             return $view;
         };

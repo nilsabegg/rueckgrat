@@ -133,7 +133,11 @@ class Database
             'port'     => $this->config['database.port'],
             'user'     => $this->config['database.username'],
             'password' => $this->config['database.password'],
-            'dbname'   => $this->config['database.database']
+            'dbname'   => $this->config['database.database'],
+            'charset' => 'utf8',
+            'driverOptions' => array(
+                    1002=>'SET NAMES utf8'
+            )
         );
         $this->entityManager = EntityManager::create($connectionOptions, $this->doctrineConfig);
 

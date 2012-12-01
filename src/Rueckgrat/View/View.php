@@ -72,10 +72,11 @@ class View
      * @param mixed $config
      * return void
      */
-    public function __construct($viewRootPath, $config)
+    public function __construct($viewRootPath, $pimple)
     {
 
-        $this->config = $config;
+        $this->pimple = $pimple;
+        $this->config = $this->pimple['config'];
         $appPath = $this->config['general.appDir'] . 'src/' . $this->config['general.namespace'];
         $this->viewRootPath = $appPath . '/View/' . $viewRootPath . '.php';
         $this->view = $viewRootPath;
@@ -158,6 +159,7 @@ class View
         if (file_exists(__DIR__ . 'public/js/'.$this->vars['viewFile'].'.js')) {
             $this->vars['viewJs'][] = $this->vars['viewFile'];
         }
+        $this->vars['session'] = $this->pimple['session'];
         extract($this->vars);
         ob_start();
         include($this->viewRootPath);

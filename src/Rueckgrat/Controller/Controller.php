@@ -97,6 +97,8 @@ abstract class Controller
      */
     protected $rootUrl = null;
 
+    protected $session = null;
+
     /**
      * template
      *
@@ -146,6 +148,7 @@ abstract class Controller
         $this->pimple = $pimple;
         $this->config = $this->pimple['config'];
         $this->action = $action;
+        $this->session = $this->pimple['session'];
         $this->createTemplate();
         $this->entityManager = $this->pimple['entityManager'];
         if ($this->isSecured == true && isset($_SESSION['id']) == false) {
@@ -212,7 +215,9 @@ abstract class Controller
     protected function createTemplate()
     {
 
-        $this->template = new View('index', $this->config);
+        $this->pimple['view.rootPath'] = 'index';
+        $view = $this->pimple['view'];
+        $this->template = $view;
 
     }
 
