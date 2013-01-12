@@ -90,7 +90,7 @@ class Router
     public function route($rawRoute)
     {
 
-        $rawRouteWithoutPath = str_replace('/' . $this->stripPathFromUrl($rawRoute), '', $rawRoute);
+        $rawRouteWithoutPath = str_replace('/' . $this->stripPathFromUrl(), '', $rawRoute);
         if ($rawRouteWithoutPath == '') {
             $rawRouteWithoutPath = '/';
         }
@@ -100,7 +100,15 @@ class Router
 
     }
 
-    protected function stripPathFromUrl($rawRoute)
+    /**
+     * stripPathFromUrl
+     *
+     * Returns the path which is stripped out of the URL.
+     *
+     * @access protected
+     * @return string
+     */
+    protected function stripPathFromUrl()
     {
 
         $urlWithoutHttp = str_replace('http://', '', $this->pimple['config']['general.url']);
