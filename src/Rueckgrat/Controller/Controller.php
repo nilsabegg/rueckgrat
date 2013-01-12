@@ -97,6 +97,14 @@ abstract class Controller
      */
     protected $rootUrl = null;
 
+    /**
+     * session
+     *
+     * Holds the session object.
+     *
+     * @access protected
+     * @var Symfony\Component\HttpFoundation\Session\Session
+     */
     protected $session = null;
 
     /**
