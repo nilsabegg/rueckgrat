@@ -69,7 +69,7 @@ class View
      * Constructs the object.
      *
      * @param string $viewRootPath
-     * @param mixed $config
+     * @param \Pimple $pimple
      * return void
      */
     public function __construct($viewRootPath, $pimple)
