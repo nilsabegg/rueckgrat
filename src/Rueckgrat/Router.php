@@ -90,7 +90,12 @@ class Router
     public function route($rawRoute)
     {
 
-        $rawRouteWithoutPath = str_replace('/' . $this->stripPathFromUrl($rawRoute), '', $rawRoute);
+        $strippedRawRoute = $this->stripPathFromUrl();
+        if ($strippedRawRoute == '') {
+            $rawRouteWithoutPath = $rawRoute;
+        } else {
+            $rawRouteWithoutPath = str_replace('/' . $this->stripPathFromUrl(), '', $rawRoute);
+        }
         if ($rawRouteWithoutPath == '') {
             $rawRouteWithoutPath = '/';
         }
@@ -108,13 +113,17 @@ class Router
      * @access protected
      * @return string
      */
-    protected function stripPathFromUrl($rawUrl)
+    protected function stripPathFromUrl()
     {
 
         $urlWithoutHttp = str_replace('http://', '', $this->pimple['config']['general.url']);
         $urlWithoutHttpParts = explode('/', $urlWithoutHttp, 2);
-
-        return $urlWithoutHttpParts[1];
+        if (isset($urlWithoutHttpParts[1]) == true) {
+            return $urlWithoutHttpParts[1];
+        }
+        else {
+            return '';
+        }
 
     }
 
