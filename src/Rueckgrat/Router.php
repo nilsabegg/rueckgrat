@@ -120,8 +120,7 @@ class Router
         $urlWithoutHttpParts = explode('/', $urlWithoutHttp, 2);
         if (isset($urlWithoutHttpParts[1]) == true) {
             return $urlWithoutHttpParts[1];
-        }
-        else {
+        } else {
             return '';
         }
 
