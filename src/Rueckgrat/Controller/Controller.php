@@ -174,7 +174,9 @@ abstract class Controller
         if ($this->config['general.i18n'] == true) {
             $userLanguage = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
             $yamlParser = new Yaml();
-            $this->strings = $yamlParser->parse(file_get_contents($this->config['general.appDir'] . 'etc/i18n/' . $userLanguage . '.yml'));
+            $languageFilePath = 'etc/i18n/' . $userLanguage . '.yml';
+            $languageFileContent = file_get_contents($this->config['general.appDir'] . $languageFilePath);
+            $this->strings = $yamlParser->parse($languageFileContent);
             $_SESSION['language'] = $userLanguage;
 
         }
