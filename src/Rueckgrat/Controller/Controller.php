@@ -17,10 +17,13 @@ use Rueckgrat\View\View as View;
  * of the application. If you want to overwrite methods of this
  * controller application-wide you can create a default controller
  * in your applications controller namespace.
+ *
  * Sample Path:
+ *
  * src/ExampleApp/Controller/DefaultController.php
  *
  * Sample default controller declaration:
+ * <code>
  * namespace ExampleApp\Controller;
  *
  * use Rueckgrat\Controller\Controller as Controller;
@@ -29,8 +32,9 @@ use Rueckgrat\View\View as View;
  * {
  *
  * }
- *
+ * </code>
  * Sample controller declaration:
+ * <code>
  * namespace ExampleApp\Controller;
  *
  * use ExampleApp\Controller\DefaultController as Controller;
@@ -39,7 +43,7 @@ use Rueckgrat\View\View as View;
  * {
  *
  * }
- * 
+ * </code>
  *
  * @author  Nils Abegg <rueckgrat@nilsabegg.de>
  * @version 0.1
