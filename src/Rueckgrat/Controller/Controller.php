@@ -14,7 +14,32 @@ use Rueckgrat\View\View as View;
  * Controller
  *
  * This class is the blueprint for all the frontend controllers
- * of the application.
+ * of the application. If you want to overwrite methods of this
+ * controller application-wide you can create a default controller
+ * in your applications controller namespace.
+ * Sample Path:
+ * src/ExampleApp/Controller/DefaultController.php
+ *
+ * Sample default controller declaration:
+ * namespace ExampleApp\Controller;
+ *
+ * use Rueckgrat\Controller\Controller as Controller;
+ *
+ * class DefaultController extends Controller
+ * {
+ *
+ * }
+ *
+ * Sample controller declaration:
+ * namespace ExampleApp\Controller;
+ *
+ * use ExampleApp\Controller\DefaultController as Controller;
+ *
+ * class SampleController extends Controller
+ * {
+ *
+ * }
+ * 
  *
  * @author  Nils Abegg <rueckgrat@nilsabegg.de>
  * @version 0.1
