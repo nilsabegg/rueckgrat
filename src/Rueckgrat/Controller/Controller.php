@@ -14,14 +14,15 @@ use Rueckgrat\View\View as View;
  * Controller
  *
  * This class is the blueprint for all the frontend controllers
- * of the application. If you want to overwrite methods of this
- * controller application-wide you can create a default controller
- * in your applications controller namespace.
+ * of the application.
+ * If you want to overwrite methods of this controller
+ * application-wide you can create a default controller in your
+ * applications controller namespace.
  *
  * Sample Path:
- *
+ * <quote>
  * src/ExampleApp/Controller/DefaultController.php
- *
+ * </quote>
  * Sample default controller declaration:
  * <code>
  * namespace ExampleApp\Controller;
@@ -211,7 +212,7 @@ abstract class Controller
         }
         $this->rootUrl = $this->getRootUrl();
 
-}
+    }
 
     /**
      * afterAction
@@ -246,7 +247,11 @@ abstract class Controller
     /**
      * createTemplate
      *
-     * Creates the page template.
+     * Creates the main template.
+     * Default Path:
+     * <quote>
+     * src/ExampleApp/View/index.php
+     * </quote>
      *
      * @access protected
      * @return void
@@ -297,16 +302,12 @@ abstract class Controller
      * @access protected
      * @param string $path
      * @return string
+     * @todo Check how to access the routing infos and after that try to make it work :D.
      */
     protected function renderComponent($path)
     {
 
-        $pathParts = explode('/', $path);
-        $controllerName = '\\' . $this->config['general.namespace'] . '\\Controller\\' . ucfirst($pathParts[0]);
-        $controller = new $controllerName($pathParts[0], $this->pimple);
-        $action = $pathParts[1];
 
-        return $controller->$action($pathParts[2]);
 
     }
 
@@ -330,7 +331,9 @@ abstract class Controller
     /**
      * getControllerName
      *
-     * Returns the name of an entity's table.
+     * Returns the name of an Controller table.
+     * This name is used for the default entity
+     * and repository for the controller.
      *
      * @access protected
      * @param  Controller $controller
@@ -338,11 +341,13 @@ abstract class Controller
      */
     protected function getControllerName(Controller $controller)
     {
+
         $controllerClassName = get_class($controller);
         $namespace = $this->config['general.namespace'];
         $fullControllerName = str_replace($namespace . '\\Controller\\', '', $controllerClassName);
 
         return $fullControllerName;
+
     }
 
     /**
