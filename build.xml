@@ -37,9 +37,10 @@
   <mkdir dir="${basedir}/build/doc"/>
 </target>
 <target name="composer" description="Install dependencies for Unit Tests">
- <exec executable="php">
-    <arg line="etc/bin/composer.phar install" />
+ <exec executable="composer">
+    <arg line="install" />
  </exec>
+
  </target>
 
  <target name="lint" description="Perform syntax check of sourcecode files">
