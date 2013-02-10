@@ -103,7 +103,9 @@ class Bootloader
         $controllerName = $controllerAndAction[0];
         $actionName = $controllerAndAction[1];
         $controller = new $controllerName($actionName, $this->pimple);
+        $controller->beforeAction();
         $controller->$actionName();
+        $controller->afterAction();
 
     }
 
