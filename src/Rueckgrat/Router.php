@@ -99,8 +99,6 @@ class Router
         if ($rawRouteWithoutPath == '') {
             $rawRouteWithoutPath = '/';
         }
-        echo '<pre>';
-        print_r($this->roller);
         $route = $this->roller->dispatch($rawRouteWithoutPath);
 
         return $route->route;
