@@ -83,6 +83,10 @@ class View
 
     }
 
+    public function __toString()
+    {
+        return $this->render();
+    }
     /**
      * set
      *
