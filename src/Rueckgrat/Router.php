@@ -141,14 +141,12 @@ class Router
         $appNamespace = $this->pimple['config']['general.namespace'];
         $appDir = $this->pimple['config']['general.appDir'];
         $controllerPath = $appDir . 'src/' . $appNamespace . '/Controller';
-        echo $controllerPath;
         $directoryHandle = opendir($controllerPath);
         while (false !== ($fileName = readdir($directoryHandle))) {
             $fileNameLength = strlen($fileName);
             if (substr($fileName, $fileNameLength - 4) == '.php') {
                 $controllerName = substr($fileName, 0, -4);
                 $fullControllerName = '\\' . $appNamespace . '\\Controller\\' . $controllerName;
-                echo $fullControllerName;
                 $this->roller->importAnnotationMethods($fullControllerName, '/Action$/');
             }
         }
