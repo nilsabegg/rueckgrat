@@ -35,6 +35,11 @@
   <mkdir dir="${basedir}/build/logs"/>
   <mkdir dir="${basedir}/build/pdepend"/>
   <mkdir dir="${basedir}/build/doc"/>
+</target>
+<target name="composer" description="Install dependencies for Unit Tests">
+ <exec executable="php">
+    <arg line="etc/bin/composer.phar install" />
+ </exec>
  </target>
 
  <target name="lint" description="Perform syntax check of sourcecode files">
@@ -115,7 +120,7 @@
   <arg line="-d ${basedir}/src -t ${basedir}/doc --template='responsive'" />
  </exec>
 </target>
- <target name="phpdoc-error" description="Generate API documentation Checkstyle log file">
+<target name="phpdoc-error" description="Generate API documentation Checkstyle log file">
  <exec executable="phpdoc">
   <arg line="-d ${basedir}/src -t ${basedir}/build/doc --template='checkstyle'" />
  </exec>

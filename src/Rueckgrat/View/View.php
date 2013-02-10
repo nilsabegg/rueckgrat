@@ -87,6 +87,7 @@ class View
     {
         return $this->render();
     }
+    
     /**
      * set
      *
