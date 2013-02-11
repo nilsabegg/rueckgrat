@@ -1,5 +1,5 @@
 {
-    "name": "ffuf/rueckgrat",
+    "name": "nilsabegg/rueckgrat",
     "type": "framework",
     "description": "A really bad MVC Framework.",
     "keywords": ["mvc","framework"],

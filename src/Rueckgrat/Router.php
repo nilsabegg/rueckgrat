@@ -66,7 +66,7 @@ class Router
     {
 
         $this->pimple = $pimple;
-        $this->roller = new Roller(array(
+        $this->roller = new Roller(null, array(
             'route_class' => '\\Rueckgrat\\Route'
         ));
         $this->type = $type;
