@@ -66,9 +66,7 @@ class Router
     {
 
         $this->pimple = $pimple;
-        $this->roller = new Roller(null, array(
-            'route_class' => '\\Rueckgrat\\Route'
-        ));
+        $this->roller = new Roller();
         $this->type = $type;
         if ($this->type == 'annotation') {
             $this->registerAnnotationControllers();
@@ -102,8 +100,7 @@ class Router
             $rawRouteWithoutPath = '/';
         }
         $route = $this->roller->dispatch($rawRouteWithoutPath);
-        echo '<pre>';
-        print_r($route);
+
         return $route->route;
 
     }
