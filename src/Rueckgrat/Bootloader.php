@@ -104,7 +104,12 @@ class Bootloader
         $actionName = $controllerAndAction[1];
         $controller = new $controllerName($actionName, $this->pimple);
         $controller->beforeAction();
-        $controller->$actionName();
+        $parameters = $route['vars'];
+        if (is_array($parameters) == true) {
+            call_user_func_array($actionName, $parameters);
+        } else {
+            $controller->$actionName();
+        }
         $controller->afterAction();
 
     }
