@@ -106,7 +106,7 @@ class Bootloader
         $controller->beforeAction();
         $parameters = $route['vars'];
         if (is_array($parameters) == true) {
-            call_user_func_array($actionName, $parameters);
+            call_user_func_array(array($controller, $actionName), $parameters);
         } else {
             $controller->$actionName();
         }
