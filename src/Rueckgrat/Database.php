@@ -23,6 +23,8 @@ use Doctrine\ORM\Configuration as DoctrineConfiguration;
 class Database
 {
 
+    protected $annotationReader = null;
+
     /**
      * cache
      *
@@ -32,6 +34,8 @@ class Database
      * @var Object
      */
     protected $cache = null;
+
+    protected $cachedAnnotationReader = null;
 
     /**
     * config
@@ -63,7 +67,7 @@ class Database
      * @var \Doctrine\ORM\EntityManager
      */
     protected $entityManager = null;
-
+    protected $eventManager = null;
     /**
      * pimple
      *
@@ -139,7 +143,7 @@ class Database
                     1002=>'SET NAMES utf8'
             )
         );
-        $this->entityManager = EntityManager::create($connectionOptions, $this->doctrineConfig);
+        $this->entityManager = EntityManager::create($connectionOptions, $this->doctrineConfig, $this->eventManager);
 
     }
 
@@ -156,10 +160,22 @@ class Database
 
         $this->createCaches();
         $this->createProxies();
+        $this->createAnnotationReaders();
+        $this->createDriver();
+        $this->createEventManager();
         $this->createEntityManager();
 
     }
+    protected function createAnnotationReaders()
+    {
 
+        $this->annotationReader = new Doctrine\Common\Annotations\AnnotationReader();
+        $this->cachedAnnotationReader = new Doctrine\Common\Annotations\CachedReader(
+            $this->annotationReader,
+            $this->cache
+        );
+
+    }
     /**
      * createCaches
      *
@@ -172,12 +188,36 @@ class Database
     {
 
         $this->doctrineConfig->setMetadataCacheImpl($this->cache);
-        $entityDir = $this->config['general.namespace'] . '/Model/Entity';
-        $entityPath = $this->config['general.appDir'] . 'src/' . $entityDir;
-        $driverImpl = $this->doctrineConfig->newDefaultAnnotationDriver($entityPath);
-        $this->doctrineConfig->setMetadataDriverImpl($driverImpl);
         $this->doctrineConfig->setQueryCacheImpl($this->cache);
 
+    }
+    protected function createDriver()
+    {
+
+        $this->driverChain = new Doctrine\ORM\Mapping\Driver\DriverChain();
+        Gedmo\DoctrineExtensions::registerAbstractMappingIntoDriverChainORM(
+            $this->driverChain, // our metadata driver chain, to hook into
+            $this->cachedAnnotationReader // our cached annotation reader
+        );
+        $entityDir = $this->config['general.namespace'] . '/Model/Entity';
+        $entityPath = $this->config['general.appDir'] . 'src/' . $entityDir;
+        $this->annotationDriver = new Doctrine\ORM\Mapping\Driver\AnnotationDriver(
+            $this->cachedAnnotationReader, // our cached annotation reader
+           array($entityPath) // paths to look in
+        );
+        $this->driverChain->addDriver($this->annotationDriver, $this->config['general.namespace'] . '\\Model\\Entity');
+        $this->doctrineConfig->setMetadataDriverImpl($this->driverChain);
+
+    }
+
+    protected function createEventManager()
+    {
+
+        $this->eventManager = new Doctrine\Common\EventManager();
+        if ($this->config['general.i18n'] == true) {
+            $this->registerI18n();
+        }
+        $this->eventManager->addEventSubscriber(new Doctrine\DBAL\Event\Listeners\MysqlSessionInit());
     }
 
     /**
@@ -203,4 +243,14 @@ class Database
 
     }
 
+    protected function registerI18n()
+    {
+
+        $translatableListener = new Gedmo\Translatable\TranslatableListener();
+        $translatableListener->setTranslatableLocale('en');
+        $translatableListener->setDefaultLocale($this->config['general.default_language']);
+        $translatableListener->setAnnotationReader($this->cachedAnnotationReader);
+        $this->eventManager->addEventSubscriber($translatableListener);
+
+    }
 }
