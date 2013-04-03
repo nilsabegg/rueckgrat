@@ -169,8 +169,8 @@ class Database
     protected function createAnnotationReaders()
     {
 
-        $this->annotationReader = new Doctrine\Common\Annotations\AnnotationReader();
-        $this->cachedAnnotationReader = new Doctrine\Common\Annotations\CachedReader(
+        $this->annotationReader = new \Doctrine\Common\Annotations\AnnotationReader();
+        $this->cachedAnnotationReader = new \Doctrine\Common\Annotations\CachedReader(
             $this->annotationReader,
             $this->cache
         );
@@ -194,14 +194,14 @@ class Database
     protected function createDriver()
     {
 
-        $this->driverChain = new Doctrine\ORM\Mapping\Driver\DriverChain();
-        Gedmo\DoctrineExtensions::registerAbstractMappingIntoDriverChainORM(
+        $this->driverChain = new \Doctrine\ORM\Mapping\Driver\DriverChain();
+        \Gedmo\DoctrineExtensions::registerAbstractMappingIntoDriverChainORM(
             $this->driverChain, // our metadata driver chain, to hook into
             $this->cachedAnnotationReader // our cached annotation reader
         );
         $entityDir = $this->config['general.namespace'] . '/Model/Entity';
         $entityPath = $this->config['general.appDir'] . 'src/' . $entityDir;
-        $this->annotationDriver = new Doctrine\ORM\Mapping\Driver\AnnotationDriver(
+        $this->annotationDriver = new \Doctrine\ORM\Mapping\Driver\AnnotationDriver(
             $this->cachedAnnotationReader, // our cached annotation reader
            array($entityPath) // paths to look in
         );
@@ -213,11 +213,11 @@ class Database
     protected function createEventManager()
     {
 
-        $this->eventManager = new Doctrine\Common\EventManager();
+        $this->eventManager = new \Doctrine\Common\EventManager();
         if ($this->config['general.i18n'] == true) {
             $this->registerI18n();
         }
-        $this->eventManager->addEventSubscriber(new Doctrine\DBAL\Event\Listeners\MysqlSessionInit());
+        $this->eventManager->addEventSubscriber(new \Doctrine\DBAL\Event\Listeners\MysqlSessionInit());
     }
 
     /**
@@ -246,7 +246,7 @@ class Database
     protected function registerI18n()
     {
 
-        $translatableListener = new Gedmo\Translatable\TranslatableListener();
+        $translatableListener = new \Gedmo\Translatable\TranslatableListener();
         $translatableListener->setTranslatableLocale('en');
         $translatableListener->setDefaultLocale($this->config['general.default_language']);
         $translatableListener->setAnnotationReader($this->cachedAnnotationReader);
