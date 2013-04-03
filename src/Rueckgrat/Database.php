@@ -158,7 +158,7 @@ class Database
     protected function setup()
     {
         \Doctrine\Common\Annotations\AnnotationRegistry::registerFile(
-            __DIR__.'/../../vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/Driver/DoctrineAnnotations.php'
+            $this->config['general.appDir'] . 'vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/Driver/DoctrineAnnotations.php'
         );
         $this->createCaches();
         $this->createProxies();
