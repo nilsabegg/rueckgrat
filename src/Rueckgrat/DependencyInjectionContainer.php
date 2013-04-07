@@ -175,9 +175,9 @@ class DependencyInjectionContainer extends \Pimple
      */
     protected function registerUser()
     {
-
-        $this['user'] = $this->share(function($pimple) {
-            $className = '\\' . $this->config['general.namespace'] . '\\User';
+        $config = $this->config;
+        $this['user'] = $this->share(function($pimple, $config) {
+            $className = '\\' . $config['general.namespace'] . '\\User';
             $user = new $className($pimple);
 
             return $user;
