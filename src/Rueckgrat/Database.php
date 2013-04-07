@@ -250,7 +250,6 @@ class Database
 
         $translatableListener = new \Gedmo\Translatable\TranslatableListener();
         $translatableListener->setDefaultLocale($this->config['general.default_language']);
-        $translatableListener->setPersistDefaultLocaleTranslation(true);
         $translatableListener->setAnnotationReader($this->cachedAnnotationReader);
         $this->eventManager->addEventSubscriber($translatableListener);
 
