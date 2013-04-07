@@ -30,6 +30,8 @@ class User
     */
     protected $config = null;
 
+    protected $entity = null;
+    
     protected $language = null;
 
     /**
@@ -84,11 +86,11 @@ class User
     }
     public function getLanguage()
     {
-        
-    }
-    public function setEntity()
-    {
 
+    }
+    public function setEntity($entity)
+    {
+        $this->entity = $entity;
     }
     public function setLanguage($language)
     {
