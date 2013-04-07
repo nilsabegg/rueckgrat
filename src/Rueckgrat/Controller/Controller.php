@@ -188,6 +188,7 @@ abstract class Controller
         $this->action = $action;
         $this->session = $this->pimple['session'];
         $this->createTemplate();
+        $this->createUser();
         $this->entityManager = $this->pimple['entityManager'];
         if ($this->isSecured == true && isset($_SESSION['id']) == false) {
             $this->redirect('user/login');
@@ -262,6 +263,19 @@ abstract class Controller
         $this->pimple['view.rootPath'] = 'index';
         $view = $this->pimple['view'];
         $this->template = $view;
+
+    }
+
+    public function createUser()
+    {
+
+        $this->user = $this->pimple['user'];
+        if ($this->session->get('user_id', 0) != 0) {
+            $entityName = '\\' . $this->config['general.namespace'] . '\\Model\\Entity\\' . User;
+            $userEntity = $this->entityManager->find($entityName, $this->session->get('user_id'));
+            $this->user->setEntity($userEntity);
+        }
+        $this->user->setLanguage($this->session->get('language', $this->config['general.default_language']));
 
     }
 
@@ -402,5 +416,4 @@ abstract class Controller
         $this->view->set($name, $value);
 
     }
-
 }

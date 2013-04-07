@@ -81,7 +81,7 @@ class Bootloader
         $this->router = new Router($this->pimple);
         $this->session = $this->pimple['session'];
         $this->session->start();
-
+        $this->session->set('language', $this->session->get('language', $this->config['general.default_language']));
     }
 
     /**

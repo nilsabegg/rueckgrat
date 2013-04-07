@@ -162,6 +162,28 @@ class DependencyInjectionContainer extends \Pimple
         });
 
     }
+
+    /**
+     * registerView
+     *
+     * Registers the view object for access
+     * via the Dependency Injection Container
+     *
+     * @access protected
+     * @return void
+     */
+    protected function registerUser()
+    {
+
+        $this['user'] = $this->share(function($pimple) {
+            $className = '\\' . $this->config['general.namespace'] . '\\User';
+            $user = new $className($pimple);
+
+            return $user;
+        });
+
+    }
+
     /**
      * registerView
      *
