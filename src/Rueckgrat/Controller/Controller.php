@@ -292,7 +292,7 @@ abstract class Controller
     protected function renderPage($ajax = false)
     {
 
-        if ($ajax == false) {
+        if ($ajax === false) {
             $this->template->set('rootUrl', $this->rootUrl);
             $this->template->set('content', $this->view->render());
             $this->template->set('js', $this->view->renderJs());
