@@ -87,7 +87,7 @@ class View
     {
         return $this->render();
     }
-    
+
     /**
      * set
      *
@@ -164,7 +164,7 @@ class View
         if (file_exists(__DIR__ . 'public/js/'.$this->vars['viewFile'].'.js')) {
             $this->vars['viewJs'][] = $this->vars['viewFile'];
         }
-        $this->vars['session'] = $this->pimple['session'];
+//        $this->vars['session'] = $this->pimple['session'];
         extract($this->vars);
         ob_start();
         include($this->viewRootPath);
